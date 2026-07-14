@@ -82,7 +82,7 @@ export const Hero = () => {
 
         {/* CTA Buttons */}
         <div className="flex flex-col sm:flex-row gap-4 justify-center items-center pt-8 animate-fade-in">
-          <a href="#" target="_blank" rel="noopener noreferrer">
+          <a href="#escolha-seu-plano">
             <Button
               size="lg"
               className="group bg-primary hover:bg-primary/90 text-primary-foreground font-semibold px-8 py-6 text-lg neon-border-cyan"

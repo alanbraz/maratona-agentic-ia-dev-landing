@@ -60,7 +60,7 @@ export const Pricing = () => {
                   </li>
                 ))}
               </ul>
-              <a href="#" target="_blank" rel="noopener noreferrer">
+              <a href="#desconto-comunidade">
                 <Button
                   className="w-full bg-primary hover:bg-primary/90 text-primary-foreground neon-border-cyan"
                   size="lg"

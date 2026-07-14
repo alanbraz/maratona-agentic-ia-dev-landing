@@ -37,7 +37,6 @@ export const Benefits = () => {
             href="#por-que-participar"
             className="inline-block hover:opacity-90 transition-opacity"
           >
-            <p className="text-xs font-semibold uppercase tracking-widest text-muted-foreground mb-4">00 / Tese</p>
             <h2 className="text-3xl md:text-5xl font-bold mb-4 leading-tight max-w-4xl mx-auto">
               O salto não está em pedir melhor.{" "}
               <span className="glow-cyan text-primary">Está em construir o ambiente certo</span>{" "}

@@ -97,37 +97,6 @@ export const WhoIsItFor = () => {
           </Card>
         </div>
 
-        {/* Hidden: "Próximos quilômetros?" (Em avaliação) section
-        <div className="mt-20">
-          <div className="text-center mb-12">
-            <a
-              href="#o-que-voce-vai-levar"
-              className="inline-block hover:opacity-90 transition-opacity"
-            >
-              <h3 id="o-que-voce-vai-levar" className="text-3xl md:text-4xl font-bold mb-3">
-                <span className="text-foreground">Próximos</span>{" "}
-                <span className="glow-cyan text-primary">quilômetros?</span>
-              </h3>
-            </a>
-            <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-              Temas candidatos em avaliação. Podem virar extensão, bônus ou uma segunda etapa da maratona.
-            </p>
-          </div>
-          <div className="grid md:grid-cols-2 gap-6 max-w-5xl mx-auto">
-            {highlights.map((item, index) => (
-              <Card
-                key={index}
-                className="p-8 bg-card/40 backdrop-blur-sm border-border/50 hover:border-primary/40 transition-all duration-300"
-              >
-                <h4 className="text-xl font-semibold text-foreground mb-3">{item.title}</h4>
-                <p className="text-muted-foreground leading-relaxed">
-                  {item.description}
-                </p>
-              </Card>
-            ))}
-          </div>
-        </div>
-        */}
       </div>
     </section>
   );
