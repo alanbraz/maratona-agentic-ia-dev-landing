@@ -5,8 +5,8 @@ import { Check } from "lucide-react";
 const plans = [
   {
     name: "Maratona Agentes de IA do jeito certo!",
-    price: "R$ 1.299,00",
-    installments: "12x de R$ 108,25 * no cartão",
+    price: "R$ 2.490,00",
+    installments: "12x de R$ 207,50 * no cartão",
     features: [
       "4 aulas ao vivo, 1 por semana, com os instrutores",
       "1 desafio prático por semana para aplicar no seu código",

@@ -32,7 +32,7 @@ export const CommunityDiscount = () => {
                   </div>
                   <div>
                     <p className="text-sm text-muted-foreground">Preço normal</p>
-                    <p className="text-2xl font-bold text-muted-foreground line-through">R$ 1.299,00</p>
+                    <p className="text-2xl font-bold text-muted-foreground line-through">R$ 2.490,00</p>
                   </div>
                 </div>
 
@@ -42,15 +42,15 @@ export const CommunityDiscount = () => {
                   </div>
                   <div>
                     <p className="text-sm text-muted-foreground">Com o cupom da comunidade</p>
-                    <p className="text-4xl font-bold glow-cyan text-primary">R$ 649,50</p>
-                    <p className="text-sm text-muted-foreground">em 12x de R$ 54,13 * no cartão</p>
+                    <p className="text-4xl font-bold glow-cyan text-primary">R$ 1.245,00</p>
+                    <p className="text-sm text-muted-foreground">em 12x de R$ 103,75 * no cartão</p>
                   </div>
                 </div>
               </div>
 
               <div className="flex flex-wrap gap-3">
                 <span className="px-3 py-1 rounded-full bg-primary/10 border border-primary/20 text-sm text-primary">
-                  Economia de R$ 649,50
+                  Economia de R$ 1.245,00
                 </span>
                 <span className="px-3 py-1 rounded-full bg-primary/10 border border-primary/20 text-sm text-primary">
                   Cupom exclusivo
