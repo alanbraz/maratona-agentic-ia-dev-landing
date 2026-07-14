@@ -4,58 +4,58 @@ import { Radio, Trophy } from "lucide-react";
 const weeks = [
   {
     week: "Semana 1",
-    period: "Última semana de agosto de 2026",
-    title: "Fundamentos, Cronologia & Arquiteturas de Agentes",
+    period: "Recursos e escolhas",
+    title: "Gestão de Tokens",
     topics: [
-      "O que é (de fato) um Agente de IA: o loop percepção-raciocínio-ação",
-      "Cronologia e evolução: de GPT-3/RLHF a function calling, ReAct e MCP",
-      "Panorama de arquiteturas e frameworks: LangGraph, CrewAI, AutoGen, MCP, Claude Agent SDK"
+      "Teoria: limites, diferenças entre modelos e a economia dos tokens de entrada e saída",
+      "Prática: comparar uma mesma tarefa em modelos distintos e usar APIs gratuitas com critério",
+      "O ativo mais caro do mundo — custo como decisão de engenharia"
     ],
     challenge: {
-      title: "Desafio da semana 1",
-      description: "Construa seu primeiro agente com tool/function calling"
+      title: "Atividade da semana",
+      description: "Medir e reduzir o custo de um fluxo real sem degradar a qualidade do resultado"
     }
   },
   {
     week: "Semana 2",
-    period: "1ª semana de setembro de 2026",
-    title: "Prompt Engineering Avançado & Conexão com Ferramentas e APIs",
+    period: "Capacidades reutilizáveis",
+    title: "Skills Everywhere?",
     topics: [
-      "Prompt engineering avançado para agentes: raciocínio, few-shot e guardrails",
-      "Integração de agentes com ferramentas e APIs externas",
-      "Computer Use: como agentes operam navegador e terminal"
+      "Teoria: o que é uma skill, quando ela ajuda e onde a promessa de reutilização se rompe",
+      "Prática: desenhar uma skill pequena, com instruções, recursos e critérios de saída claros",
+      "Eficiência e limites das capacidades reutilizáveis"
     ],
     challenge: {
-      title: "Desafio da semana 2",
-      description: "Computer Use — construa um agente que opera navegador e terminal com ferramentas reais"
+      title: "Atividade da semana",
+      description: "Aplicar a skill em três tarefas reais e registrar consistência, falhas e ajustes"
     }
   },
   {
     week: "Semana 3",
-    period: "2ª semana de setembro de 2026",
-    title: "Harness, Orquestração & Multiagentes",
+    period: "O sistema ao redor do modelo",
+    title: "Harness Engineering",
     topics: [
-      "Anatomia de um harness: loop de ferramentas, permissões, memória e contexto",
-      "Orquestração de sistemas multiagente: dividindo tarefas entre agentes especialistas",
-      "Padrões de coordenação e subagentes"
+      "Teoria: como contexto, ferramentas, permissões, memória e feedback determinam o resultado",
+      "Prática: montar dois harnesses para a mesma LLM e observar a diferença de desempenho",
+      "Ambiente é capacidade"
     ],
     challenge: {
-      title: "Desafio da semana 3",
-      description: "Construa seu próprio harness com orquestração multi-agente"
+      title: "Atividade da semana",
+      description: "Instrumentar o próprio ambiente e documentar gargalos, riscos e melhorias"
     }
   },
   {
     week: "Semana 4",
-    period: "3ª semana de setembro de 2026",
-    title: "Dados Proprietários, Deploy, Monitoramento & Governança",
+    period: "Trabalho contínuo",
+    title: "Loop Engineering",
     topics: [
-      "Contextualização com dados proprietários (RAG avançado)",
-      "Deploy, monitoramento e escalabilidade de agentes em produção",
-      "Segurança e governança: prompt injection, sandboxing, human-in-the-loop"
+      "Teoria: loops, estados, critérios de parada, observabilidade e recuperação de falhas",
+      "Prática: construir um ciclo supervisionado que planeja, executa, verifica e tenta novamente",
+      "IA trabalhando 24/7"
     ],
     challenge: {
-      title: "Desafio final",
-      description: "Leve um agente para produção com observability, custo controlado e segurança"
+      title: "Atividade da semana",
+      description: "Rodar o loop em uma tarefa longa, acompanhar seu comportamento e apresentar evidências"
     }
   }
 ];
@@ -70,19 +70,11 @@ export const Schedule = () => {
             className="inline-block hover:opacity-90 transition-opacity"
           >
             <h2 className="text-4xl md:text-5xl font-bold mb-4">
-              <span className="glow-cyan text-primary">Conteúdo da Maratona</span>
+              <span className="glow-cyan text-primary">A trilha da maratona</span>
             </h2>
           </a>
           <p className="text-xl text-muted-foreground">
-            4 semanas, 4 aulas ao vivo, 1 desafio prático por semana — baseado no currículo técnico da{" "}
-            <a
-              href="https://iftl.ai/ai-4-tech"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="underline hover:text-primary transition-colors"
-            >
-              IFTL AI 4 Tech
-            </a>
+            Quatro semanas, quatro alavancas. Cada encontro combina repertório, execução ao vivo e uma missão para aplicar durante a semana.
           </p>
         </div>
 
@@ -95,7 +87,7 @@ export const Schedule = () => {
                 </div>
                 <div>
                   <p className="text-xs font-semibold uppercase tracking-wide text-primary">
-                    {item.week} • Aula ao vivo • {item.period}
+                    {item.week} • {item.period}
                   </p>
                   <h3 className="text-xl font-bold text-foreground">{item.title}</h3>
                 </div>
@@ -129,13 +121,24 @@ export const Schedule = () => {
               className="inline-block hover:opacity-90 transition-opacity"
             >
               <h3 id="maratona-5-desafios" className="text-2xl font-bold mb-2 text-foreground">
-                Como funciona o programa
+                Antes da largada
               </h3>
             </a>
-            <p className="text-muted-foreground">
-              Turma ao vivo e online, com início previsto para a última semana de agosto de 2026. Uma aula por semana,
-              durante 4 semanas, sempre seguida de um desafio prático para aplicar o conteúdo no seu próprio código.
+            <p className="text-muted-foreground mb-8 max-w-2xl mx-auto">
+              Dois aquecimentos formam uma base comum para que a turma comece a maratona falando a mesma língua.
             </p>
+            <div className="grid md:grid-cols-2 gap-6 text-left max-w-3xl mx-auto">
+              <div className="rounded-lg border border-border/60 bg-card/60 p-6">
+                <p className="text-xs font-semibold uppercase tracking-wide text-primary mb-2">Aquecimento A • Contexto</p>
+                <h4 className="text-lg font-semibold text-foreground mb-2">Do Copiloto às Fábulas sobre Sol, Terra e Lua</h4>
+                <p className="text-sm text-muted-foreground">A história do desenvolvimento com IA, as mudanças de paradigma e como chegamos ao momento atual dos agentes.</p>
+              </div>
+              <div className="rounded-lg border border-border/60 bg-card/60 p-6">
+                <p className="text-xs font-semibold uppercase tracking-wide text-primary mb-2">Aquecimento B • Preparação</p>
+                <h4 className="text-lg font-semibold text-foreground mb-2">Montando seu ambiente de trabalho com IA</h4>
+                <p className="text-sm text-muted-foreground">Por onde começar: IDE, CLI, planos pagos, ferramentas essenciais e a configuração de computador necessária.</p>
+              </div>
+            </div>
           </div>
         </Card>
       </div>

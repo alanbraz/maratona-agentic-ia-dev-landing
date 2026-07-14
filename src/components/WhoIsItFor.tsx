@@ -30,20 +30,20 @@ const audience = [
 
 const highlights = [
   {
-    title: "Modelo mental completo de agentes",
-    description: "Do 'o que é um agente' até 'como rodar em produção', sem lacunas."
+    title: "LLM local ou própria na nuvem",
+    description: "Segurança dos dados, custo e o momento em que essa arquitetura realmente se justifica."
   },
   {
-    title: "Harness na prática",
-    description: "Construa o loop de ferramentas, permissões e contexto que dá vida a um agente."
+    title: "Agentes pessoais",
+    description: "OpenClaw, Hermes e Odysseus como pontos de partida para agentes que acompanham o usuário."
   },
   {
-    title: "Computer Use sem mistério",
-    description: "Como agentes operam interfaces (navegador, terminal) com segurança."
+    title: "Deploy de projetos em VMs",
+    description: "Como tirar um projeto do computador pessoal e operá-lo em um ambiente remoto."
   },
   {
-    title: "Checklist de produção",
-    description: "Custo, segurança, avaliação e observability para levar direto ao time."
+    title: "LGPD e IA",
+    description: "Quando proteger dados, como reduzir exposição e como usar IA com informação sensível."
   }
 ];
 
@@ -104,12 +104,12 @@ export const WhoIsItFor = () => {
               className="inline-block hover:opacity-90 transition-opacity"
             >
               <h3 id="o-que-voce-vai-levar" className="text-3xl md:text-4xl font-bold mb-3">
-                <span className="text-foreground">O que você vai</span>{" "}
-                <span className="glow-cyan text-primary">levar</span>
+                <span className="text-foreground">Próximos</span>{" "}
+                <span className="glow-cyan text-primary">quilômetros?</span>
               </h3>
             </a>
             <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-              Clareza técnica, código real e direção para levar agentes ao seu time
+              Temas candidatos em avaliação. Podem virar extensão, bônus ou uma segunda etapa da maratona.
             </p>
           </div>
           <div className="grid md:grid-cols-2 gap-6 max-w-5xl mx-auto">

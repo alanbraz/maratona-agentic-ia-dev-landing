@@ -11,10 +11,10 @@ export const Footer = () => {
           
           <div className="space-y-2">
             <p className="text-muted-foreground">
-              Maratona Agentes de IA do jeito certo!
+              Maratona de Agentes
             </p>
             <p className="text-sm text-muted-foreground">
-              Fundamentos, cronologia, computer use e harness para devs e tech leaders
+              Da assistência à autonomia — construa sistemas de IA que fazem trabalho real
             </p>
           </div>
           

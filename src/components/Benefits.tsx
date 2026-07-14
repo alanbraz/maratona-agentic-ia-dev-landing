@@ -4,26 +4,26 @@ import { Card } from "@/components/ui/card";
 const benefits = [
   {
     icon: Brain,
-    title: "Fundamentos que Ficam",
-    description: "Do histórico e cronologia da IA até a arquitetura de agentes, sem gap de conhecimento",
+    title: "Contexto, não hype",
+    description: "Entender as ondas anteriores evita tratar cada ferramenta nova como uma revolução isolada",
     color: "text-primary"
   },
   {
     icon: Rocket,
-    title: "Direto pro Código",
-    description: "Construa agentes, harness e orquestração multi-agente com exemplos reais, não só slides",
+    title: "Ambiente é capacidade",
+    description: "A inteligência disponível depende do sistema ao redor do modelo: memória, ferramentas e feedback",
     color: "text-secondary"
   },
   {
     icon: Users,
-    title: "Turma ao vivo, não gravação",
-    description: "4 aulas ao vivo, interação direta com os instrutores e turma com vagas limitadas",
+    title: "Repertório + execução ao vivo",
+    description: "Cada encontro combina teoria, prática ao vivo e uma missão para aplicar durante a semana",
     color: "text-primary"
   },
   {
     icon: Trophy,
-    title: "Nível Produção",
-    description: "Segurança, custo, computer use e observability para levar direto para o seu time",
+    title: "Autonomia observável",
+    description: "O destino não é ausência de supervisão: é autonomia com limites, controle e responsabilidade",
     color: "text-secondary"
   }
 ];
@@ -37,13 +37,13 @@ export const Benefits = () => {
             href="#por-que-participar"
             className="inline-block hover:opacity-90 transition-opacity"
           >
-            <h2 className="text-4xl md:text-5xl font-bold mb-4">
-              <span className="glow-blue text-secondary">Por que escolher?</span>
+            <p className="text-xs font-semibold uppercase tracking-widest text-muted-foreground mb-4">00 / Tese</p>
+            <h2 className="text-3xl md:text-5xl font-bold mb-4 leading-tight max-w-4xl mx-auto">
+              O salto não está em pedir melhor.{" "}
+              <span className="glow-cyan text-primary">Está em construir o ambiente certo</span>{" "}
+              para a inteligência trabalhar.
             </h2>
           </a>
-          <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
-            Tudo o que você precisa para dominar Agentes de IA de forma técnica, prática e aplicável
-          </p>
         </div>
 
         <div className="grid md:grid-cols-2 gap-6">

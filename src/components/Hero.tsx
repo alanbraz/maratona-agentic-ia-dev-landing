@@ -1,10 +1,10 @@
 import { Button } from "@/components/ui/button";
-import { ArrowRight, Calendar, MapPin, Flag, Sparkles, Target, Trophy } from "lucide-react";
+import { ArrowRight, Calendar, MapPin, Coins, Boxes, Wrench, RefreshCw } from "lucide-react";
 const journeyDays = [
-  { date: "Semana 1", title: "Aula 1", description: "Fundamentos, cronologia e arquiteturas de Agentes de IA", icon: Flag },
-  { date: "Semana 2", title: "Aula 2", description: "Prompt engineering avançado, ferramentas, APIs e Computer Use", icon: Sparkles },
-  { date: "Semana 3", title: "Aula 3", description: "Harness, orquestração e sistemas multiagente", icon: Target },
-  { date: "Semana 4", title: "Aula 4", description: "Dados proprietários, deploy, monitoramento e governança", icon: Trophy }
+  { date: "Semana 1", title: "Gestão de Tokens", description: "Limites, modelos e a economia dos tokens de entrada e saída", icon: Coins },
+  { date: "Semana 2", title: "Skills Everywhere?", description: "Capacidades reutilizáveis: quando ajudam e onde a promessa se rompe", icon: Boxes },
+  { date: "Semana 3", title: "Harness Engineering", description: "Contexto, ferramentas, permissões, memória e feedback como capacidade", icon: Wrench },
+  { date: "Semana 4", title: "Loop Engineering", description: "Loops, estados e critérios de parada para IA trabalhando 24/7", icon: RefreshCw }
 ];
 // import logo from "@/assets/maratona.png";
 
@@ -36,10 +36,10 @@ export const Hero = () => {
 
         {/* Main Title */}
         <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold leading-tight animate-fade-in">
-          <span className="block text-foreground mb-2">Maratona Agentes de IA</span>
-          <span className="block glow-cyan text-primary">do jeito certo!</span>
+          <span className="block text-foreground mb-2">Da assistência</span>
+          <span className="block glow-cyan text-primary">à autonomia.</span>
           <span className="block text-2xl md:text-3xl lg:text-4xl mt-4 text-muted-foreground">
-            Fundamentos, cronologia, computer use e harness — ao vivo, em 4 semanas
+            Construa sistemas de IA capazes de fazer trabalho real — com contexto, método e controle
           </span>
         </h1>
 
@@ -47,18 +47,18 @@ export const Hero = () => {
         <div className="flex flex-col sm:flex-row items-center justify-center gap-6 text-foreground/80 animate-fade-in">
           <div className="flex items-center gap-2">
             <Calendar className="w-5 h-5 text-primary" />
-            <span>4 aulas ao vivo • 1 desafio prático por semana</span>
+            <span>02 aquecimentos • 04 semanas de maratona</span>
           </div>
           <div className="hidden sm:block w-1 h-1 bg-primary rounded-full" />
           <div className="flex items-center gap-2">
             <MapPin className="w-5 h-5 text-secondary" />
-            <span>100% online • Turma com vagas limitadas</span>
+            <span>Teoria · Prática · Campo • Vagas limitadas</span>
           </div>
         </div>
 
         {/* Description */}
         <p className="text-lg md:text-xl text-muted-foreground max-w-3xl mx-auto animate-fade-in">
-          Um caminho técnico e direto para entender e construir Agentes de IA de verdade — do conceito ao harness em produção, em turma ao vivo com desafios semanais.
+          Uma jornada prática para quem já trabalha com IA e quer construir sistemas capazes de fazer trabalho real. Cada encontro combina repertório, execução ao vivo e uma missão para aplicar durante a semana.
         </p>
 
         <div className="w-full max-w-4xl mx-auto grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 pt-2 animate-fade-in">

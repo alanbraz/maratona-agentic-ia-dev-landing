@@ -5,6 +5,7 @@ import { WhoIsItFor } from "@/components/WhoIsItFor";
 import { Instructors } from "@/components/Instructors";
 import { CommunityDiscount } from "@/components/CommunityDiscount";
 import { Pricing } from "@/components/Pricing";
+import { Discussion } from "@/components/Discussion";
 import { Footer } from "@/components/Footer";
 
 const Index = () => {
@@ -17,6 +18,7 @@ const Index = () => {
       <Instructors />
       <CommunityDiscount />
       <Pricing />
+      <Discussion />
       <Footer />
     </div>
   );
