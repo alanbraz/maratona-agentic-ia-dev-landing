@@ -97,6 +97,7 @@ export const WhoIsItFor = () => {
           </Card>
         </div>
 
+        {/* Hidden: "Próximos quilômetros?" (Em avaliação) section
         <div className="mt-20">
           <div className="text-center mb-12">
             <a
@@ -126,6 +127,7 @@ export const WhoIsItFor = () => {
             ))}
           </div>
         </div>
+        */}
       </div>
     </section>
   );
