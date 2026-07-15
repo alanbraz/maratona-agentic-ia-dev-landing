@@ -14,7 +14,7 @@ export const Footer = () => {
               Maratona de Agentes
             </p>
             <p className="text-sm text-muted-foreground">
-              Da assistência à autonomia — construa sistemas de IA que fazem trabalho real
+              Da assistência à autonomia, construa sistemas de IA que fazem trabalho real
             </p>
           </div>
           

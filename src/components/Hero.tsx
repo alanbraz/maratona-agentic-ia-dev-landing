@@ -1,10 +1,10 @@
 import { Button } from "@/components/ui/button";
 import { ArrowRight, Calendar, MapPin, Coins, Boxes, Wrench, RefreshCw } from "lucide-react";
 const journeyDays = [
-  { date: "Semana 1", title: "Gestão de Tokens", description: "Limites, modelos e a economia dos tokens de entrada e saída", icon: Coins },
-  { date: "Semana 2", title: "Skills Everywhere?", description: "Capacidades reutilizáveis: quando ajudam e onde a promessa se rompe", icon: Boxes },
-  { date: "Semana 3", title: "Harness Engineering", description: "Contexto, ferramentas, permissões, memória e feedback como capacidade", icon: Wrench },
-  { date: "Semana 4", title: "Loop Engineering", description: "Loops, estados e critérios de parada para IA trabalhando 24/7", icon: RefreshCw }
+  { date: "Semana 1 • Aula 1", title: "Gestão de Tokens", description: "Limites, modelos e a economia dos tokens de entrada e saída", icon: Coins },
+  { date: "Semana 1 • Aula 2", title: "Skills Everywhere?", description: "Capacidades reutilizáveis: quando ajudam e onde a promessa se rompe", icon: Boxes },
+  { date: "Semana 2 • Aula 3", title: "Harness Engineering", description: "Contexto, ferramentas, permissões, memória e feedback como capacidade", icon: Wrench },
+  { date: "Semana 2 • Aula 4", title: "Loop Engineering", description: "Loops, estados e critérios de parada para IA trabalhando 24/7", icon: RefreshCw }
 ];
 // import logo from "@/assets/maratona.png";
 
@@ -39,7 +39,7 @@ export const Hero = () => {
           <span className="block text-foreground mb-2">Da assistência</span>
           <span className="block glow-cyan text-primary">à autonomia.</span>
           <span className="block text-2xl md:text-3xl lg:text-4xl mt-4 text-muted-foreground">
-            Construa sistemas de IA capazes de fazer trabalho real — com contexto, método e controle
+            Construa sistemas de IA capazes de fazer trabalho real, com contexto, método e controle
           </span>
         </h1>
 
@@ -47,7 +47,7 @@ export const Hero = () => {
         <div className="flex flex-col sm:flex-row items-center justify-center gap-6 text-foreground/80 animate-fade-in">
           <div className="flex items-center gap-2">
             <Calendar className="w-5 h-5 text-primary" />
-            <span>02 aquecimentos • 04 semanas de maratona</span>
+            <span>02 aquecimentos • 02 semanas de maratona • 04 aulas</span>
           </div>
           <div className="hidden sm:block w-1 h-1 bg-primary rounded-full" />
           <div className="flex items-center gap-2">

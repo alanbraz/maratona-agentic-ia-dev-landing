@@ -8,7 +8,7 @@ const plans = [
     price: "R$ 2.490,00",
     installments: "12x de R$ 207,50 * no cartão",
     features: [
-      "4 aulas ao vivo, 1 por semana, com os instrutores",
+      "4 aulas ao vivo, 2 por semana, com os instrutores",
       "1 desafio prático por semana para aplicar no seu código",
       "Fundamentos, cronologia e evolução da IA",
       "Prompt engineering avançado, ferramentas, APIs e Computer Use",

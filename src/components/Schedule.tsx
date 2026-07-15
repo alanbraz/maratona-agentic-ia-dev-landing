@@ -4,58 +4,58 @@ import { Radio, Trophy } from "lucide-react";
 const weeks = [
   {
     week: "Semana 1",
-    period: "Recursos e escolhas",
-    title: "Gestão de Tokens",
-    topics: [
-      "Teoria: limites, diferenças entre modelos e a economia dos tokens de entrada e saída",
-      "Prática: comparar uma mesma tarefa em modelos distintos e usar APIs gratuitas com critério",
-      "O ativo mais caro do mundo — custo como decisão de engenharia"
+    period: "Recursos, escolhas e capacidades",
+    lessons: [
+      {
+        title: "Aula 1 • Gestão de Tokens",
+        subtitle: "Recursos e escolhas",
+        topics: [
+          "Teoria: limites, diferenças entre modelos e a economia dos tokens de entrada e saída",
+          "Prática: comparar uma mesma tarefa em modelos distintos e usar APIs gratuitas com critério",
+          "O ativo mais caro do mundo: custo como decisão de engenharia"
+        ]
+      },
+      {
+        title: "Aula 2 • Skills Everywhere?",
+        subtitle: "Capacidades reutilizáveis",
+        topics: [
+          "Teoria: o que é uma skill, quando ela ajuda e onde a promessa de reutilização se rompe",
+          "Prática: desenhar uma skill pequena, com instruções, recursos e critérios de saída claros",
+          "Eficiência e limites das capacidades reutilizáveis"
+        ]
+      }
     ],
     challenge: {
       title: "Atividade da semana",
-      description: "Medir e reduzir o custo de um fluxo real sem degradar a qualidade do resultado"
+      description: "Medir e reduzir o custo de um fluxo real e aplicar uma skill em três tarefas reais, registrando consistência, falhas e ajustes"
     }
   },
   {
     week: "Semana 2",
-    period: "Capacidades reutilizáveis",
-    title: "Skills Everywhere?",
-    topics: [
-      "Teoria: o que é uma skill, quando ela ajuda e onde a promessa de reutilização se rompe",
-      "Prática: desenhar uma skill pequena, com instruções, recursos e critérios de saída claros",
-      "Eficiência e limites das capacidades reutilizáveis"
+    period: "O sistema ao redor do modelo e trabalho contínuo",
+    lessons: [
+      {
+        title: "Aula 3 • Harness Engineering",
+        subtitle: "O sistema ao redor do modelo",
+        topics: [
+          "Teoria: como contexto, ferramentas, permissões, memória e feedback determinam o resultado",
+          "Prática: montar dois harnesses para a mesma LLM e observar a diferença de desempenho",
+          "Ambiente é capacidade"
+        ]
+      },
+      {
+        title: "Aula 4 • Loop Engineering",
+        subtitle: "Trabalho contínuo",
+        topics: [
+          "Teoria: loops, estados, critérios de parada, observabilidade e recuperação de falhas",
+          "Prática: construir um ciclo supervisionado que planeja, executa, verifica e tenta novamente",
+          "IA trabalhando 24/7"
+        ]
+      }
     ],
     challenge: {
       title: "Atividade da semana",
-      description: "Aplicar a skill em três tarefas reais e registrar consistência, falhas e ajustes"
-    }
-  },
-  {
-    week: "Semana 3",
-    period: "O sistema ao redor do modelo",
-    title: "Harness Engineering",
-    topics: [
-      "Teoria: como contexto, ferramentas, permissões, memória e feedback determinam o resultado",
-      "Prática: montar dois harnesses para a mesma LLM e observar a diferença de desempenho",
-      "Ambiente é capacidade"
-    ],
-    challenge: {
-      title: "Atividade da semana",
-      description: "Instrumentar o próprio ambiente e documentar gargalos, riscos e melhorias"
-    }
-  },
-  {
-    week: "Semana 4",
-    period: "Trabalho contínuo",
-    title: "Loop Engineering",
-    topics: [
-      "Teoria: loops, estados, critérios de parada, observabilidade e recuperação de falhas",
-      "Prática: construir um ciclo supervisionado que planeja, executa, verifica e tenta novamente",
-      "IA trabalhando 24/7"
-    ],
-    challenge: {
-      title: "Atividade da semana",
-      description: "Rodar o loop em uma tarefa longa, acompanhar seu comportamento e apresentar evidências"
+      description: "Instrumentar o próprio ambiente e rodar um loop em uma tarefa longa, acompanhando seu comportamento e apresentando evidências"
     }
   }
 ];
@@ -74,33 +74,41 @@ export const Schedule = () => {
             </h2>
           </a>
           <p className="text-xl text-muted-foreground">
-            Quatro semanas, quatro alavancas. Cada encontro combina repertório, execução ao vivo e uma missão para aplicar durante a semana.
+            Duas semanas, quatro alavancas, duas aulas por semana. Cada encontro combina repertório, execução ao vivo e uma missão para aplicar durante a semana.
           </p>
         </div>
 
         <div className="grid md:grid-cols-2 gap-8 mb-12">
           {weeks.map((item, index) => (
             <Card key={index} className="p-8 bg-card/50 backdrop-blur-sm border-primary/30 flex flex-col">
-              <div className="flex items-center gap-3 mb-4">
+              <div className="flex items-center gap-3 mb-6">
                 <div className="w-12 h-12 rounded-full bg-primary/20 flex items-center justify-center flex-shrink-0">
                   <Radio className="w-6 h-6 text-primary" />
                 </div>
                 <div>
                   <p className="text-xs font-semibold uppercase tracking-wide text-primary">
-                    {item.week} • {item.period}
+                    {item.week} • 2 aulas
                   </p>
-                  <h3 className="text-xl font-bold text-foreground">{item.title}</h3>
+                  <h3 className="text-xl font-bold text-foreground">{item.period}</h3>
                 </div>
               </div>
 
-              <ul className="space-y-2 mb-6 flex-1">
-                {item.topics.map((topic, idx) => (
-                  <li key={idx} className="text-sm text-muted-foreground flex gap-2">
-                    <span className="text-primary">•</span>
-                    <span>{topic}</span>
-                  </li>
+              <div className="space-y-5 mb-6 flex-1">
+                {item.lessons.map((lesson, lessonIdx) => (
+                  <div key={lessonIdx}>
+                    <p className="text-sm font-semibold text-foreground">{lesson.title}</p>
+                    <p className="text-xs text-primary mb-2">{lesson.subtitle}</p>
+                    <ul className="space-y-2">
+                      {lesson.topics.map((topic, idx) => (
+                        <li key={idx} className="text-sm text-muted-foreground flex gap-2">
+                          <span className="text-primary">•</span>
+                          <span>{topic}</span>
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
                 ))}
-              </ul>
+              </div>
 
               <div className="rounded-lg border border-secondary/30 bg-secondary/10 p-4 flex gap-3 items-start">
                 <Trophy className="w-5 h-5 text-secondary flex-shrink-0 mt-0.5" />
