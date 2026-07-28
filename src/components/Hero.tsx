@@ -105,7 +105,6 @@ export const Hero = () => {
         <div className="pt-8 animate-fade-in">
           <p className="text-sm text-muted-foreground mb-2">Oferta única da Maratona Agentes de IA do jeito certo</p>
           <div className="flex items-center justify-center gap-3">
-            <span className="text-2xl font-bold text-muted-foreground line-through">R$ 2.490,00</span>
             <span className="text-5xl font-bold glow-cyan text-primary">R$ 1.245,00 *</span>
           </div>
           <p className="text-sm text-muted-foreground mt-2">em 12x de R$ 103,75 no cartão</p>
