@@ -47,7 +47,7 @@ export const Hero = () => {
         <div className="flex flex-col sm:flex-row items-center justify-center gap-6 text-foreground/80 animate-fade-in">
           <div className="flex items-center gap-2">
             <Calendar className="w-5 h-5 text-primary" />
-            <span>02 aquecimentos • 02 semanas de maratona • 04 aulas</span>
+            <span>02 aquecimentos • 02 semanas de maratona • 04 aulas • 10h no total</span>
           </div>
           <div className="hidden sm:block w-1 h-1 bg-primary rounded-full" />
           <div className="flex items-center gap-2">
@@ -105,9 +105,11 @@ export const Hero = () => {
         <div className="pt-8 animate-fade-in">
           <p className="text-sm text-muted-foreground mb-2">Oferta única da Maratona Agentes de IA do jeito certo</p>
           <div className="flex items-center justify-center gap-3">
-            <span className="text-5xl font-bold glow-cyan text-primary">R$ 2.490,00</span>
+            <span className="text-2xl font-bold text-muted-foreground line-through">R$ 2.490,00</span>
+            <span className="text-5xl font-bold glow-cyan text-primary">R$ 1.245,00 *</span>
           </div>
-          <p className="text-sm text-muted-foreground mt-2">em 12x de R$ 207,50 * no cartão</p>
+          <p className="text-sm text-muted-foreground mt-2">em 12x de R$ 103,75 no cartão</p>
+          <p className="text-xs text-muted-foreground mt-2">* com o cupom de 50% da comunidade PullreCast</p>
         </div>
       </div>
     </section>

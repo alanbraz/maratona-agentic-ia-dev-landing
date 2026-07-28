@@ -5,8 +5,9 @@ import { Check } from "lucide-react";
 const plans = [
   {
     name: "Maratona Agentes de IA do jeito certo!",
-    price: "R$ 2.490,00",
-    installments: "12x de R$ 207,50 * no cartão",
+    originalPrice: "R$ 2.490,00",
+    price: "R$ 1.245,00 *",
+    installments: "12x de R$ 103,75 no cartão",
     features: [
       "4 aulas ao vivo, 2 por semana, com os instrutores",
       "1 desafio prático por semana para aplicar no seu código",
@@ -45,10 +46,14 @@ export const Pricing = () => {
               <div className="text-center mb-6">
                 <h3 className="text-2xl font-bold text-foreground mb-2">{plan.name}</h3>
                 <div className="space-y-2">
+                  <p className="text-2xl font-bold text-muted-foreground line-through">
+                    {plan.originalPrice}
+                  </p>
                   <p className="text-4xl font-bold text-primary glow-cyan">
                     {plan.price}
                   </p>
                   <p className="text-sm text-muted-foreground">{plan.installments}</p>
+                  <p className="text-xs text-muted-foreground">* com o cupom de 50% da comunidade PullreCast</p>
                 </div>
               </div>
 
@@ -74,7 +79,7 @@ export const Pricing = () => {
 
         <div className="mt-12 text-center">
           <p className="text-sm text-muted-foreground">
-            * Parcelamento sujeito às condições da operadora do cartão.
+            * Desconto de 50% aplicado com o cupom da comunidade PullreCast. Parcelamento sujeito às condições da operadora do cartão.
           </p>
         </div>
       </div>

@@ -9,6 +9,7 @@ const weeks = [
       {
         title: "Aula 1 • Gestão de Tokens",
         subtitle: "Recursos e escolhas",
+        date: "terça, 01 de setembro",
         topics: [
           "Teoria: limites, diferenças entre modelos e a economia dos tokens de entrada e saída",
           "Prática: comparar uma mesma tarefa em modelos distintos e usar APIs gratuitas com critério",
@@ -18,6 +19,7 @@ const weeks = [
       {
         title: "Aula 2 • Skills Everywhere?",
         subtitle: "Capacidades reutilizáveis",
+        date: "quinta, 03 de setembro",
         topics: [
           "Teoria: o que é uma skill, quando ela ajuda e onde a promessa de reutilização se rompe",
           "Prática: desenhar uma skill pequena, com instruções, recursos e critérios de saída claros",
@@ -37,6 +39,7 @@ const weeks = [
       {
         title: "Aula 3 • Harness Engineering",
         subtitle: "O sistema ao redor do modelo",
+        date: "terça, 08 de setembro",
         topics: [
           "Teoria: como contexto, ferramentas, permissões, memória e feedback determinam o resultado",
           "Prática: montar dois harnesses para a mesma LLM e observar a diferença de desempenho",
@@ -46,6 +49,7 @@ const weeks = [
       {
         title: "Aula 4 • Loop Engineering",
         subtitle: "Trabalho contínuo",
+        date: "quinta, 10 de setembro",
         topics: [
           "Teoria: loops, estados, critérios de parada, observabilidade e recuperação de falhas",
           "Prática: construir um ciclo supervisionado que planeja, executa, verifica e tenta novamente",
@@ -74,7 +78,7 @@ export const Schedule = () => {
             </h2>
           </a>
           <p className="text-xl text-muted-foreground">
-            Duas semanas, quatro alavancas, duas aulas por semana. Cada encontro combina repertório, execução ao vivo e uma missão para aplicar durante a semana.
+            Duas semanas, quatro alavancas, duas aulas por semana. Cada aula tem 2h30, totalizando 10h de maratona. Cada encontro combina repertório, execução ao vivo e uma missão para aplicar durante a semana.
           </p>
         </div>
 
@@ -98,6 +102,9 @@ export const Schedule = () => {
                   <div key={lessonIdx}>
                     <p className="text-sm font-semibold text-foreground">{lesson.title}</p>
                     <p className="text-xs text-primary mb-2">{lesson.subtitle}</p>
+                    {lesson.date && (
+                      <p className="text-xs font-medium text-secondary mb-2">📅 {lesson.date} • 2h30</p>
+                    )}
                     <ul className="space-y-2">
                       {lesson.topics.map((topic, idx) => (
                         <li key={idx} className="text-sm text-muted-foreground flex gap-2">
@@ -139,11 +146,13 @@ export const Schedule = () => {
               <div className="rounded-lg border border-border/60 bg-card/60 p-6">
                 <p className="text-xs font-semibold uppercase tracking-wide text-primary mb-2">Aquecimento A • Contexto</p>
                 <h4 className="text-lg font-semibold text-foreground mb-2">Do Copiloto às Fábulas sobre Sol, Terra e Lua</h4>
+                <p className="text-xs font-medium text-secondary mb-2">📅 quarta, 19 de agosto</p>
                 <p className="text-sm text-muted-foreground">A história do desenvolvimento com IA, as mudanças de paradigma e como chegamos ao momento atual dos agentes.</p>
               </div>
               <div className="rounded-lg border border-border/60 bg-card/60 p-6">
                 <p className="text-xs font-semibold uppercase tracking-wide text-primary mb-2">Aquecimento B • Preparação</p>
                 <h4 className="text-lg font-semibold text-foreground mb-2">Montando seu ambiente de trabalho com IA</h4>
+                <p className="text-xs font-medium text-secondary mb-2">📅 terça, 25 de agosto</p>
                 <p className="text-sm text-muted-foreground">Por onde começar: IDE, CLI, planos pagos, ferramentas essenciais e a configuração de computador necessária.</p>
               </div>
             </div>
