@@ -1,5 +1,6 @@
 import { Button } from "@/components/ui/button";
 import { ArrowRight, Calendar, MapPin, Coins, Boxes, Wrench, RefreshCw } from "lucide-react";
+import { CHECKOUT_URL } from "@/lib/checkout";
 const journeyDays = [
   { date: "Semana 1 • Aula 1", title: "Gestão de Tokens", description: "Limites, modelos e a economia dos tokens de entrada e saída", icon: Coins },
   { date: "Semana 1 • Aula 2", title: "Skills Everywhere?", description: "Capacidades reutilizáveis: quando ajudam e onde a promessa se rompe", icon: Boxes },
@@ -82,7 +83,7 @@ export const Hero = () => {
 
         {/* CTA Buttons */}
         <div className="flex flex-col sm:flex-row gap-4 justify-center items-center pt-8 animate-fade-in">
-          <a href="#escolha-seu-plano">
+          <a href={CHECKOUT_URL} target="_blank" rel="noopener noreferrer">
             <Button
               size="lg"
               className="group bg-primary hover:bg-primary/90 text-primary-foreground font-semibold px-8 py-6 text-lg neon-border-cyan"

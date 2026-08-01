@@ -33,16 +33,11 @@ export const Benefits = () => {
     <section id="por-que-participar" className="py-24 px-4 relative">
       <div className="max-w-6xl mx-auto">
         <div className="text-center mb-16">
-          <a
-            href="#por-que-participar"
-            className="inline-block hover:opacity-90 transition-opacity"
-          >
-            <h2 className="text-3xl md:text-5xl font-bold mb-4 leading-tight max-w-4xl mx-auto">
-              O salto não está em pedir melhor.<br />
-              <span className="glow-cyan text-primary">Está em construir o ambiente certo</span>{" "}
-              para a inteligência trabalhar.
-            </h2>
-          </a>
+          <h2 className="text-3xl md:text-5xl font-bold mb-4 leading-tight max-w-4xl mx-auto">
+            O salto não está em pedir melhor.<br />
+            <span className="glow-cyan text-primary">Está em construir o ambiente certo</span>{" "}
+            para a inteligência trabalhar.
+          </h2>
         </div>
 
         <div className="grid md:grid-cols-2 gap-6">

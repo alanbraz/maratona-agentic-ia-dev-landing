@@ -1,6 +1,7 @@
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
 import { Check } from "lucide-react";
+import { CHECKOUT_URL } from "@/lib/checkout";
 
 const plans = [
   {
@@ -65,7 +66,7 @@ export const Pricing = () => {
                   </li>
                 ))}
               </ul>
-              <a href="#desconto-comunidade">
+              <a href={CHECKOUT_URL} target="_blank" rel="noopener noreferrer">
                 <Button
                   className="w-full bg-primary hover:bg-primary/90 text-primary-foreground neon-border-cyan"
                   size="lg"
