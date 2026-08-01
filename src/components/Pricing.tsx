@@ -1,6 +1,6 @@
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
-import { Check } from "lucide-react";
+import { Check, ExternalLink, Gift, Sparkles } from "lucide-react";
 import { CHECKOUT_URL } from "@/lib/checkout";
 
 const plans = [
@@ -9,6 +9,10 @@ const plans = [
     originalPrice: "R$ 2.490,00",
     price: "R$ 1.245,00 *",
     installments: "12x de R$ 103,75 no cartão",
+    bonus: {
+      title: "Maratona IA do jeito certo! inclusa",
+      description: "Uma trilha online, com acesso imediato, para aprender IA do zero, aplicar no trabalho e chegar à jornada de agentes com mais confiança.",
+    },
     features: [
       "4 aulas ao vivo, 2 por semana, com os instrutores",
       "1 desafio prático por semana para aplicar no seu código",
@@ -51,6 +55,25 @@ export const Pricing = () => {
                   <p className="text-sm text-muted-foreground">{plan.installments}</p>
                   <p className="text-xs text-muted-foreground">* com o cupom de 50% da comunidade PullreCast</p>
                 </div>
+              </div>
+
+              <div className="mb-8 rounded-xl border border-secondary/50 bg-secondary/10 p-5">
+                <div className="flex items-center gap-2 text-secondary">
+                  <Gift className="w-5 h-5" />
+                  <span className="text-sm font-bold uppercase tracking-wide">Bônus de inscrição</span>
+                  <Sparkles className="w-4 h-4" />
+                </div>
+                <p className="mt-3 font-semibold text-foreground">{plan.bonus.title}</p>
+                <p className="mt-1 text-sm leading-relaxed text-muted-foreground">{plan.bonus.description}</p>
+                <a
+                  href="https://maratona.ia.br"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="mt-3 inline-flex items-center gap-1 text-sm font-semibold text-secondary hover:text-secondary/80 transition-colors"
+                >
+                  Ver conteúdo da Maratona IA
+                  <ExternalLink className="w-3.5 h-3.5" />
+                </a>
               </div>
 
               <ul className="space-y-3 mb-8">

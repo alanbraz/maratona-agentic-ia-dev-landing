@@ -1,5 +1,5 @@
 import { Button } from "@/components/ui/button";
-import { ArrowRight, Calendar, MapPin, Coins, Boxes, Wrench, RefreshCw } from "lucide-react";
+import { ArrowRight, Calendar, MapPin, Coins, Boxes, Wrench, RefreshCw, Gift, ExternalLink } from "lucide-react";
 const journeyDays = [
   { date: "Semana 1 • Aula 1", title: "Gestão de Tokens", description: "Limites, modelos e a economia dos tokens de entrada e saída", icon: Coins },
   { date: "Semana 1 • Aula 2", title: "Skills Everywhere?", description: "Capacidades reutilizáveis: quando ajudam e onde a promessa se rompe", icon: Boxes },
@@ -60,6 +60,27 @@ export const Hero = () => {
         <p className="text-lg md:text-xl text-muted-foreground max-w-3xl mx-auto animate-fade-in">
           Uma jornada prática para quem já trabalha com IA e quer construir sistemas capazes de fazer trabalho real. Cada encontro combina repertório, execução ao vivo e uma missão para aplicar durante a semana.
         </p>
+
+        <div className="max-w-2xl mx-auto rounded-xl border border-secondary/50 bg-secondary/10 px-5 py-4 text-left animate-fade-in">
+          <div className="flex items-start gap-3">
+            <Gift className="w-6 h-6 flex-shrink-0 text-secondary mt-0.5" />
+            <div>
+              <p className="font-semibold text-foreground">Bônus para você começar com segurança</p>
+              <p className="mt-1 text-sm text-muted-foreground">
+                Ao se inscrever, você ganha a Maratona IA do jeito certo!: uma trilha online, com acesso imediato, para sair do zero e aplicar IA no trabalho antes de avançar para os agentes.
+              </p>
+              <a
+                href="https://maratona.ia.br"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="mt-3 inline-flex items-center gap-1 text-sm font-semibold text-secondary hover:text-secondary/80 transition-colors"
+              >
+                Conheça a Maratona IA
+                <ExternalLink className="w-3.5 h-3.5" />
+              </a>
+            </div>
+          </div>
+        </div>
 
         <div className="w-full max-w-4xl mx-auto grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 pt-2 animate-fade-in">
           {journeyDays.map((day) => {
