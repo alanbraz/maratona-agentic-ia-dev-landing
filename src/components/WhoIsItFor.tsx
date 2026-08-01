@@ -52,15 +52,10 @@ export const WhoIsItFor = () => {
     <section id="para-quem-e-a-maratona" className="py-24 px-4 bg-card/30">
       <div className="max-w-6xl mx-auto">
         <div className="text-center mb-16">
-          <a
-            href="#para-quem-e-a-maratona"
-            className="inline-block hover:opacity-90 transition-opacity"
-          >
-            <h2 className="text-4xl md:text-5xl font-bold mb-4">
-              <span className="text-foreground">Para Quem é a</span>{" "}
-              <span className="glow-cyan text-primary">Maratona Agentes de IA?</span>
-            </h2>
-          </a>
+          <h2 className="text-4xl md:text-5xl font-bold mb-4">
+            <span className="text-foreground">Para Quem é a</span>{" "}
+            <span className="glow-cyan text-primary">Maratona Agentes de IA?</span>
+          </h2>
           <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
             Perfeita para quem constrói software e precisa dominar Agentes de IA na prática
           </p>

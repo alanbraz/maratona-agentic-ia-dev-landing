@@ -25,14 +25,9 @@ export const Pricing = () => {
     <section id="escolha-seu-plano" className="py-24 px-4 relative">
       <div className="max-w-7xl mx-auto">
         <div className="text-center mb-16">
-          <a
-            href="#escolha-seu-plano"
-            className="inline-block hover:opacity-90 transition-opacity"
-          >
-            <h2 className="text-4xl md:text-5xl font-bold mb-4">
-              <span className="glow-blue text-secondary">Garanta a Maratona Agentes de IA do jeito certo!</span>
-            </h2>
-          </a>
+          <h2 className="text-4xl md:text-5xl font-bold mb-4">
+            <span className="glow-blue text-secondary">Garanta a Maratona Agentes de IA do jeito certo!</span>
+          </h2>
           <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
             Garanta o conteúdo técnico completo por um valor acessível
           </p>

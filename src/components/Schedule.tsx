@@ -69,18 +69,44 @@ export const Schedule = () => {
     <section id="conteudo-programa" className="py-24 px-4 bg-card/30 relative">
       <div className="max-w-6xl mx-auto">
         <div className="text-center mb-16">
-          <a
-            href="#conteudo-programa"
-            className="inline-block hover:opacity-90 transition-opacity"
-          >
-            <h2 className="text-4xl md:text-5xl font-bold mb-4">
-              <span className="glow-cyan text-primary">A trilha da maratona</span>
-            </h2>
-          </a>
+          <h2 className="text-4xl md:text-5xl font-bold mb-4">
+            <span className="glow-cyan text-primary">O percurso da maratona</span>
+          </h2>
           <p className="text-xl text-muted-foreground">
             Duas semanas, quatro alavancas, duas aulas por semana. Cada aula tem 2h30, totalizando 10h de maratona. Cada encontro combina repertório, execução ao vivo e uma missão para aplicar durante a semana.
           </p>
         </div>
+
+        {/* Marathon Period */}
+        <Card className="p-8 mb-12 bg-gradient-to-r from-primary/10 to-secondary/10 border-primary/30">
+          <div className="text-center">
+            <a
+              href="#maratona-5-desafios"
+              className="inline-block hover:opacity-90 transition-opacity"
+            >
+              <h3 id="maratona-5-desafios" className="text-2xl font-bold mb-2 text-foreground">
+                Antes da largada
+              </h3>
+            </a>
+            <p className="text-muted-foreground mb-8 max-w-2xl mx-auto">
+              Dois aquecimentos formam uma base comum para que a turma comece a maratona falando a mesma língua.
+            </p>
+            <div className="grid md:grid-cols-2 gap-6 text-left max-w-3xl mx-auto">
+              <div className="rounded-lg border border-border/60 bg-card/60 p-6">
+                <p className="text-xs font-semibold uppercase tracking-wide text-primary mb-2">Aquecimento A • Contexto</p>
+                <h4 className="text-lg font-semibold text-foreground mb-2">Do Copiloto às Fábulas sobre Sol, Terra e Lua</h4>
+                <p className="text-xs font-medium text-secondary mb-2">📅 quarta, 19 de agosto</p>
+                <p className="text-sm text-muted-foreground">A história do desenvolvimento com IA, as mudanças de paradigma e como chegamos ao momento atual dos agentes.</p>
+              </div>
+              <div className="rounded-lg border border-border/60 bg-card/60 p-6">
+                <p className="text-xs font-semibold uppercase tracking-wide text-primary mb-2">Aquecimento B • Preparação</p>
+                <h4 className="text-lg font-semibold text-foreground mb-2">Montando seu ambiente de trabalho com IA</h4>
+                <p className="text-xs font-medium text-secondary mb-2">📅 terça, 25 de agosto</p>
+                <p className="text-sm text-muted-foreground">Por onde começar: IDE, CLI, planos pagos, ferramentas essenciais e a configuração de computador necessária.</p>
+              </div>
+            </div>
+          </div>
+        </Card>
 
         <div className="grid md:grid-cols-2 gap-8 mb-12">
           {weeks.map((item, index) => (
@@ -128,36 +154,6 @@ export const Schedule = () => {
           ))}
         </div>
 
-        {/* Marathon Period */}
-        <Card className="p-8 bg-gradient-to-r from-primary/10 to-secondary/10 border-primary/30">
-          <div className="text-center">
-            <a
-              href="#maratona-5-desafios"
-              className="inline-block hover:opacity-90 transition-opacity"
-            >
-              <h3 id="maratona-5-desafios" className="text-2xl font-bold mb-2 text-foreground">
-                Antes da largada
-              </h3>
-            </a>
-            <p className="text-muted-foreground mb-8 max-w-2xl mx-auto">
-              Dois aquecimentos formam uma base comum para que a turma comece a maratona falando a mesma língua.
-            </p>
-            <div className="grid md:grid-cols-2 gap-6 text-left max-w-3xl mx-auto">
-              <div className="rounded-lg border border-border/60 bg-card/60 p-6">
-                <p className="text-xs font-semibold uppercase tracking-wide text-primary mb-2">Aquecimento A • Contexto</p>
-                <h4 className="text-lg font-semibold text-foreground mb-2">Do Copiloto às Fábulas sobre Sol, Terra e Lua</h4>
-                <p className="text-xs font-medium text-secondary mb-2">📅 quarta, 19 de agosto</p>
-                <p className="text-sm text-muted-foreground">A história do desenvolvimento com IA, as mudanças de paradigma e como chegamos ao momento atual dos agentes.</p>
-              </div>
-              <div className="rounded-lg border border-border/60 bg-card/60 p-6">
-                <p className="text-xs font-semibold uppercase tracking-wide text-primary mb-2">Aquecimento B • Preparação</p>
-                <h4 className="text-lg font-semibold text-foreground mb-2">Montando seu ambiente de trabalho com IA</h4>
-                <p className="text-xs font-medium text-secondary mb-2">📅 terça, 25 de agosto</p>
-                <p className="text-sm text-muted-foreground">Por onde começar: IDE, CLI, planos pagos, ferramentas essenciais e a configuração de computador necessária.</p>
-              </div>
-            </div>
-          </div>
-        </Card>
       </div>
     </section>
   );

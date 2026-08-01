@@ -6,28 +6,28 @@ import { Globe, Linkedin } from "lucide-react";
 
 const instructors = [
   {
-    name: "Alan Braz",
-    role: "Especialista em Sistemas com IA (IBM)",
-    image: instructor1,
-    bio: "Líder de Arquitetura de Sistemas de IA Generativa, experiência internacional na IBM Research, defensor de IA Open-Source e criador do podcast PullreCast, com mais de 25 anos de experiência em liderança técnica, inovação em sistemas de IA, pesquisa, patentes e produtos em nuvem híbrida.",
-    website: "https://alan.ia.br",
-    linkedin: "https://www.linkedin.com/in/alanbraz"
-  },
-  {
-    name: "Matheus Bitencourt",
-    role: "Especialista em Agentes de IA (IBM)",
-    image: instructor2,
-    bio: "Especialista em Agentes de IA, Inovação e Vendas na IBM, professor de MBA em Inteligência Artificial e criador do podcast PullreCast, com mais de 10 anos de experiência como arquiteto de soluções, líder técnico e premiado por inovações e patentes.",
-    website: "https://matheus.ia.br",
-    linkedin: "https://www.linkedin.com/in/matheusbitencourt-ai/"
-  },
-  {
     name: "Marcus Devolder",
     role: "Cientista de Dados | Especialista em Soluções de IA",
     image: instructor3,
     bio: "Cientista de Dados com passagem por consultorias como a Globality IT Consulting, onde implementou agentes e assistentes de IA para acelerar projetos de clientes. Pós-graduado em Analytics e Business Intelligence pela PUC Minas, hoje se especializa em Engenharia de Inteligência Artificial e em levar Agentes de IA para dentro dos times de tecnologia.",
     website: null,
     linkedin: "https://www.linkedin.com/in/marcusdevolder/"
+  },
+  {
+    name: "Matheus Bitencourt",
+    role: "Especialista em Agentes de IA | Professor de MBA",
+    image: instructor2,
+    bio: "Especialista em Agentes de IA, Inovação e Vendas na IBM, professor de MBA em Inteligência Artificial e criador do podcast PullreCast, com mais de 10 anos de experiência como arquiteto de soluções, líder técnico e premiado por inovações e patentes.",
+    website: "https://matheus.ia.br",
+    linkedin: "https://www.linkedin.com/in/matheusbitencourt-ai/"
+  },
+  {
+    name: "Alan Braz",
+    role: "Arquiteto de Sistemas de IA Agêntica | Palestrante | Mentor",
+    image: instructor1,
+    bio: "Construindo e avaliando sistemas multiagentes desde 2017. Mestre em Engenharia de Software, Pesquisador e Gerente de Engenharia com mais de 20 anos em tecnologia. Palestrante e líder de workshops sobre agentes de IA em produção, avaliação e governança, com 15 patentes e 18 artigos publicados.",
+    website: "https://alan.ia.br",
+    linkedin: "https://www.linkedin.com/in/alanbraz"
   }
 ];
 
@@ -36,15 +36,10 @@ export const Instructors = () => {
     <section id="conheca-seus-instrutores" className="py-24 px-4 bg-background">
       <div className="max-w-6xl mx-auto">
         <div className="text-center mb-16">
-          <a
-            href="#conheca-seus-instrutores"
-            className="inline-block hover:opacity-90 transition-opacity"
-          >
-            <h2 className="text-4xl md:text-5xl font-bold mb-4">
-              <span className="text-foreground">Conheça seus</span>{" "}
-              <span className="glow-cyan text-primary">Instrutores</span>
-            </h2>
-          </a>
+          <h2 className="text-4xl md:text-5xl font-bold mb-4">
+            <span className="text-foreground">Conheça seus</span>{" "}
+            <span className="glow-cyan text-primary">Instrutores</span>
+          </h2>
           <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
             Conteúdo criado por especialistas que constroem Agentes de IA de verdade
           </p>
