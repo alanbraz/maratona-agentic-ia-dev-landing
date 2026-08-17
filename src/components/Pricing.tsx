@@ -6,20 +6,20 @@ import { CHECKOUT_URL } from "@/lib/checkout";
 const plans = [
   {
     name: "Maratona Agentes de IA do jeito certo!",
-    originalPrice: "R$ 2.490,00",
-    price: "R$ 1.245,00 *",
-    installments: "12x de R$ 103,75 no cartão",
+    originalPrice: "R$ 1.245,00",
+    price: "R$ 622,50 *",
+    installments: "12x de R$ 51,88 no cartão",
     bonus: {
-      title: "Maratona IA do jeito certo! inclusa",
-      description: "Uma trilha online, com acesso imediato, para aprender IA do zero, aplicar no trabalho e chegar à jornada de agentes com mais confiança.",
+      title: "Maratona IA do jeito certo! inclusa (R$ 397,90)",
+      description: "Uma trilha online de R$ 397,90, com acesso imediato, para aprender IA do zero, aplicar no trabalho e chegar à jornada de agentes com mais confiança.",
     },
     features: [
       "4 aulas ao vivo, 2 por semana, com os instrutores",
-      "1 desafio prático por semana para aplicar no seu código",
-      "Fundamentos, cronologia e evolução da IA",
-      "Prompt engineering avançado, ferramentas, APIs e Computer Use",
-      "Harness e orquestração multi-agente com código real",
-      "Dados proprietários, deploy, monitoramento e governança"
+      "2 aquecimentos preparatórios e 4 aulas ao vivo",
+      "Skills, MCPs e plugins",
+      "Harness Engineering e Loop Engineering",
+      "Gestão de tokens, custos e governança",
+      "Ferramentas e exemplos reais, com princípios agnósticos a fornecedor"
     ]
   }
 ];

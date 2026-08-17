@@ -1,10 +1,10 @@
 import { Button } from "@/components/ui/button";
 import { ArrowRight, Calendar, MapPin, Coins, Boxes, Wrench, RefreshCw, Gift, ExternalLink } from "lucide-react";
 const journeyDays = [
-  { date: "Semana 1 • Aula 1", title: "Gestão de Tokens", description: "Limites, modelos e a economia dos tokens de entrada e saída", icon: Coins },
-  { date: "Semana 1 • Aula 2", title: "Skills Everywhere?", description: "Capacidades reutilizáveis: quando ajudam e onde a promessa se rompe", icon: Boxes },
-  { date: "Semana 2 • Aula 3", title: "Harness Engineering", description: "Contexto, ferramentas, permissões, memória e feedback como capacidade", icon: Wrench },
-  { date: "Semana 2 • Aula 4", title: "Loop Engineering", description: "Loops, estados e critérios de parada para IA trabalhando 24/7", icon: RefreshCw }
+  { date: "Semana 1 • Aula 1", title: "Skills, MCPs e Plugins", description: "Capacidades reutilizáveis com critérios de segurança e manutenção", icon: Boxes },
+  { date: "Semana 1 • Aula 2", title: "Harness Engineering", description: "Contexto, ferramentas, permissões, memória e feedback como capacidade", icon: Wrench },
+  { date: "Semana 2 • Aula 3", title: "Loop Engineering", description: "Loops, estados e critérios de parada para IA trabalhando 24/7", icon: RefreshCw },
+  { date: "Semana 2 • Aula 4", title: "Tokens, Custos e Governança", description: "Modelos, orçamento e custo por resultado", icon: Coins }
 ];
 // import logo from "@/assets/maratona.png";
 
@@ -36,8 +36,8 @@ export const Hero = () => {
 
         {/* Main Title */}
         <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold leading-tight animate-fade-in">
-          <span className="block text-foreground mb-2">Da assistência</span>
-          <span className="block glow-cyan text-primary">à autonomia.</span>
+          <span className=" text-foreground mb-2">Da assistência</span>
+          <span className=" glow-cyan text-primary"> à autonomia.</span>
           <span className="block text-2xl md:text-3xl lg:text-4xl mt-4 text-muted-foreground">
             Construa sistemas de IA capazes de fazer trabalho real, com contexto, método e controle
           </span>
@@ -47,7 +47,7 @@ export const Hero = () => {
         <div className="flex flex-col sm:flex-row items-center justify-center gap-6 text-foreground/80 animate-fade-in">
           <div className="flex items-center gap-2">
             <Calendar className="w-5 h-5 text-primary" />
-            <span>02 aquecimentos • 02 semanas de maratona • 04 aulas • 10h no total</span>
+            <span>02 aquecimentos + 02 semanas de maratona com 04 aulas • 14h no total</span>
           </div>
           <div className="hidden sm:block w-1 h-1 bg-primary rounded-full" />
           <div className="flex items-center gap-2">
@@ -58,16 +58,16 @@ export const Hero = () => {
 
         {/* Description */}
         <p className="text-lg md:text-xl text-muted-foreground max-w-3xl mx-auto animate-fade-in">
-          Uma jornada prática para quem já trabalha com IA e quer construir sistemas capazes de fazer trabalho real. Cada encontro combina repertório, execução ao vivo e uma missão para aplicar durante a semana.
+          Uma jornada prática para construir sistemas agênticos com contexto, controle, evidência e responsabilidade.<br></br>Os princípios servem para qualquer ferramenta, não para uma interface específica.
         </p>
 
-        <div className="max-w-2xl mx-auto rounded-xl border border-secondary/50 bg-secondary/10 px-5 py-4 text-left animate-fade-in">
+        {/* <div className="max-w-2xl mx-auto rounded-xl border border-secondary/50 bg-secondary/10 px-5 py-4 text-left animate-fade-in">
           <div className="flex items-start gap-3">
             <Gift className="w-6 h-6 flex-shrink-0 text-secondary mt-0.5" />
             <div>
               <p className="font-semibold text-foreground">Bônus para você começar com segurança</p>
               <p className="mt-1 text-sm text-muted-foreground">
-                Ao se inscrever, você ganha a Maratona IA do jeito certo!: uma trilha online, com acesso imediato, para sair do zero e aplicar IA no trabalho antes de avançar para os agentes.
+                Ao se inscrever, você ganha a Maratona IA do jeito certo!, no valor de R$ 397,90: uma trilha online, com acesso imediato, para sair do zero e aplicar IA no trabalho antes de avançar para os agentes.
               </p>
               <a
                 href="https://maratona.ia.br"
@@ -80,7 +80,7 @@ export const Hero = () => {
               </a>
             </div>
           </div>
-        </div>
+        </div> */}
 
         <div className="w-full max-w-4xl mx-auto grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 pt-2 animate-fade-in">
           {journeyDays.map((day) => {
@@ -125,9 +125,9 @@ export const Hero = () => {
         <div className="pt-8 animate-fade-in">
           <p className="text-sm text-muted-foreground mb-2">Oferta única da Maratona Agentes de IA do jeito certo</p>
           <div className="flex items-center justify-center gap-3">
-            <span className="text-5xl font-bold glow-cyan text-primary">R$ 1.245,00 *</span>
+            <span className="text-5xl font-bold glow-cyan text-primary">R$ 622,50 *</span>
           </div>
-          <p className="text-sm text-muted-foreground mt-2">em 12x de R$ 103,75 no cartão</p>
+          <p className="text-sm text-muted-foreground mt-2">em 12x de R$ 51,88 no cartão</p>
           <p className="text-xs text-muted-foreground mt-2">* com o cupom de 50% da comunidade PullreCast</p>
         </div>
       </div>

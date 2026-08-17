@@ -4,26 +4,26 @@ import { Card } from "@/components/ui/card";
 const benefits = [
   {
     icon: Brain,
-    title: "Contexto, não hype",
-    description: "Entender as ondas anteriores evita tratar cada ferramenta nova como uma revolução isolada",
+    title: "Maturidade, não hype",
+    description: "Entender o sistema e saber por que ele funciona para não confundir uma boa demonstração com resultado",
     color: "text-primary"
   },
   {
     icon: Rocket,
-    title: "Ambiente é capacidade",
-    description: "A inteligência disponível depende do sistema ao redor do modelo: memória, ferramentas e feedback",
+    title: "Conhecimento transferível",
+    description: "Os princípios valem para Codex, Claude Code, Cursor, Antigravity, OpenCode, Hermes e as próximas ferramentas",
     color: "text-secondary"
   },
   {
     icon: Users,
     title: "Repertório + execução ao vivo",
-    description: "Cada encontro combina teoria, prática ao vivo e uma missão para aplicar durante a semana",
+    description: "Cada encontro combina teoria, prática ao vivo e uma construção que evolui durante a maratona",
     color: "text-primary"
   },
   {
     icon: Trophy,
-    title: "Autonomia observável",
-    description: "O destino não é ausência de supervisão: é autonomia com limites, controle e responsabilidade",
+    title: "Economia com critério",
+    description: "Decida modelos, planos, orçamento e uso de tokens sem desperdiçar dinheiro ou perder governança",
     color: "text-secondary"
   }
 ];

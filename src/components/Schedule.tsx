@@ -4,62 +4,62 @@ import { Radio, Trophy } from "lucide-react";
 const weeks = [
   {
     week: "Semana 1",
-    period: "Recursos, escolhas e capacidades",
+    period: "Capacidades e o sistema ao redor do modelo",
     lessons: [
       {
-        title: "Aula 1 • Gestão de Tokens",
-        subtitle: "Recursos e escolhas",
+        title: "Aula 1 • Skills, MCPs e Plugins",
+        subtitle: "Capacidades agênticas",
         date: "terça, 01 de setembro",
         topics: [
-          "Teoria: limites, diferenças entre modelos e a economia dos tokens de entrada e saída",
-          "Prática: comparar uma mesma tarefa em modelos distintos e usar APIs gratuitas com critério",
-          "O ativo mais caro do mundo: custo como decisão de engenharia"
+          "Teoria: skills, agentes, subagentes, MCPs e plugins: onde cada peça começa, termina e se conecta",
+          "Prática: inspecionar capacidades existentes e criar ou adaptar uma para um problema real",
+          "Critérios de segurança, dependência, contexto e manutenção"
         ]
       },
       {
-        title: "Aula 2 • Skills Everywhere?",
-        subtitle: "Capacidades reutilizáveis",
+        title: "Aula 2 • Harness Engineering",
+        subtitle: "O sistema ao redor do modelo",
         date: "quinta, 03 de setembro",
         topics: [
-          "Teoria: o que é uma skill, quando ela ajuda e onde a promessa de reutilização se rompe",
-          "Prática: desenhar uma skill pequena, com instruções, recursos e critérios de saída claros",
-          "Eficiência e limites das capacidades reutilizáveis"
+          "Teoria: contexto, memória, ferramentas, permissões, estado, gates e evidências",
+          "Prática: comparar configurações e construir um harness mínimo para um agente simples",
+          "Por que a mesma inteligência apresenta resultados diferentes em ambientes diferentes"
         ]
       }
     ],
     challenge: {
       title: "Atividade da semana",
-      description: "Medir e reduzir o custo de um fluxo real e aplicar uma skill em três tarefas reais, registrando consistência, falhas e ajustes"
+      description: "Criar uma capacidade reutilizável e desenhar um harness controlado para aplicá-la em uma tarefa real"
     }
   },
   {
     week: "Semana 2",
-    period: "O sistema ao redor do modelo e trabalho contínuo",
+    period: "Trabalho contínuo, economia e governança",
     lessons: [
       {
-        title: "Aula 3 • Harness Engineering",
-        subtitle: "O sistema ao redor do modelo",
+        title: "Aula 3 • Loop Engineering",
+        subtitle: "Como fazer a IA continuar trabalhando",
         date: "terça, 08 de setembro",
         topics: [
-          "Teoria: como contexto, ferramentas, permissões, memória e feedback determinam o resultado",
-          "Prática: montar dois harnesses para a mesma LLM e observar a diferença de desempenho",
-          "Ambiente é capacidade"
+          "Teoria: estado, planejamento, execução, observação, avaliação, retries, checkpoints e escalada humana",
+          "Prática: construir um loop que executa, verifica, corrige e sabe quando parar",
+          "Autonomia com critérios de sucesso, falha e parada verificáveis"
         ]
       },
       {
-        title: "Aula 4 • Loop Engineering",
-        subtitle: "Trabalho contínuo",
+        title: "Aula 4 • Gestão de Tokens, Custos e Governança",
+        subtitle: "Custo por resultado",
         date: "quinta, 10 de setembro",
         topics: [
-          "Teoria: loops, estados, critérios de parada, observabilidade e recuperação de falhas",
-          "Prática: construir um ciclo supervisionado que planeja, executa, verifica e tenta novamente",
-          "IA trabalhando 24/7"
+          "Tokens de entrada e saída, contexto, cache, reasoning, preços, APIs, gateways e formas de mensuração",
+          "Como escolher planos, encontrar IAs gratuitas e selecionar o modelo ideal para cada tarefa",
+          "Prática: comparar alternativas e montar uma política simples de orçamento e roteamento"
         ]
       }
     ],
     challenge: {
       title: "Atividade da semana",
-      description: "Instrumentar o próprio ambiente e rodar um loop em uma tarefa longa, acompanhando seu comportamento e apresentando evidências"
+      description: "Rodar um loop verificável e medir o custo por tarefa para tomar decisões de modelo e orçamento com evidências"
     }
   }
 ];
@@ -89,20 +89,20 @@ export const Schedule = () => {
               </h3>
             </a>
             <p className="text-muted-foreground mb-8 max-w-2xl mx-auto">
-              Dois aquecimentos formam uma base comum para que a turma comece a maratona falando a mesma língua.
+              Dois aquecimentos formam uma base comum para que a turma comece falando a mesma língua e usando a ferramenta que fizer mais sentido para cada pessoa.
             </p>
             <div className="grid md:grid-cols-2 gap-6 text-left max-w-3xl mx-auto">
               <div className="rounded-lg border border-border/60 bg-card/60 p-6">
                 <p className="text-xs font-semibold uppercase tracking-wide text-primary mb-2">Aquecimento A • Contexto</p>
-                <h4 className="text-lg font-semibold text-foreground mb-2">Do Copiloto às Fábulas sobre Sol, Terra e Lua</h4>
+                <h4 className="text-lg font-semibold text-foreground mb-2">Como chegamos aos agentes</h4>
                 <p className="text-xs font-medium text-secondary mb-2">📅 quarta, 19 de agosto</p>
-                <p className="text-sm text-muted-foreground">A história do desenvolvimento com IA, as mudanças de paradigma e como chegamos ao momento atual dos agentes.</p>
+                <p className="text-sm text-muted-foreground">Dos copilotos aos modelos com reasoning, ferramentas, MCPs, skills e agentes. Separando evolução incremental do que realmente muda a forma de trabalhar.</p>
               </div>
               <div className="rounded-lg border border-border/60 bg-card/60 p-6">
                 <p className="text-xs font-semibold uppercase tracking-wide text-primary mb-2">Aquecimento B • Preparação</p>
-                <h4 className="text-lg font-semibold text-foreground mb-2">Montando seu ambiente de trabalho com IA</h4>
+                <h4 className="text-lg font-semibold text-foreground mb-2">Seu ambiente para trabalhar com agentes</h4>
                 <p className="text-xs font-medium text-secondary mb-2">📅 terça, 25 de agosto</p>
-                <p className="text-sm text-muted-foreground">Por onde começar: IDE, CLI, planos pagos, ferramentas essenciais e a configuração de computador necessária.</p>
+                <p className="text-sm text-muted-foreground">Vamos instalar e configurar opções como Codex, Claude Code, Cursor, Antigravity, OpenCode e Hermes. Cada pessoa escolhe a ferramenta com que se sente mais à vontade.</p>
               </div>
             </div>
           </div>
