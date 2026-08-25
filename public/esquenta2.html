@@ -1,0 +1,363 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Setup — Maratona Agentes de IA do jeito certo!</title>
+<meta name="description" content="Guia oficial de setup para Windows, WSL, macOS e Linux/VPS, com links oficiais para ferramentas de IA.">
+<style>
+:root{--bg:#0d0f12;--surface:#15191e;--surface2:#1d232b;--ink:#f4f3ed;--muted:#aeb4bd;--accent:#ff663f;--line:#343b44;--ok:#62d69b;--warn:#ffca66;--blue:#68b7ff}
+*{box-sizing:border-box} html{scroll-behavior:smooth} body{margin:0;background:var(--bg);color:var(--ink);font-family:Inter,ui-sans-serif,system-ui,-apple-system,Segoe UI,sans-serif;line-height:1.55}
+a{color:#9acbff} a:hover{color:white} .wrap{max-width:1120px;margin:auto;padding:0 24px}
+.hero{padding:64px 0 36px;border-bottom:1px solid var(--line)} .eyebrow{font:600 12px ui-monospace,monospace;letter-spacing:.09em;text-transform:uppercase;color:var(--accent)}
+h1{font-size:clamp(38px,6vw,72px);line-height:.96;letter-spacing:-.045em;margin:14px 0 24px;max-width:900px} h2{font-size:30px;letter-spacing:-.025em;margin:0 0 12px} h3{font-size:19px;margin:0 0 7px} p{color:#d6d8dc}
+.meta{display:flex;gap:12px;flex-wrap:wrap} .pill{border:1px solid var(--line);border-radius:999px;padding:7px 11px;color:var(--muted);font-size:12px}
+.notice{margin:24px 0;padding:16px 18px;border-left:3px solid var(--warn);background:#211d14;border-radius:8px} .notice strong{color:var(--warn)}
+nav{position:sticky;top:0;background:rgba(13,15,18,.94);backdrop-filter:blur(10px);z-index:4;border-bottom:1px solid var(--line)} nav .wrap{display:flex;gap:16px;overflow:auto;padding-top:12px;padding-bottom:12px} nav a{white-space:nowrap;text-decoration:none;font-size:13px;color:var(--muted)} nav a:hover{color:var(--ink)}
+section{padding:48px 0;border-bottom:1px solid var(--line)} .grid{display:grid;grid-template-columns:repeat(12,1fr);gap:16px} .card{grid-column:span 6;background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:20px} .card.full{grid-column:1/-1} .card.third{grid-column:span 4}
+.tag{font:600 11px ui-monospace,monospace;letter-spacing:.06em;text-transform:uppercase;color:var(--accent)} .official{color:var(--ok)}
+.cmd{display:flex;gap:10px;align-items:stretch;background:#090b0e;border:1px solid var(--line);border-radius:9px;margin:9px 0;overflow:hidden}
+.cmd code{display:block;overflow:auto;white-space:pre;padding:11px 12px;flex:1;color:#cde9ff;font:12px/1.45 ui-monospace,SFMono-Regular,Consolas,monospace}
+.cmd button{border:0;border-left:1px solid var(--line);background:#20262d;color:#ddd;padding:0 12px;cursor:pointer} .cmd button:hover{background:#2a323b}
+table{width:100%;border-collapse:collapse;font-size:13px} th,td{border-bottom:1px solid var(--line);padding:10px 8px;vertical-align:top;text-align:left} th{color:white;font-size:12px;text-transform:uppercase;letter-spacing:.04em} td{color:#d1d4d9}
+.small{font-size:12px;color:var(--muted)} ul{padding-left:20px} li{margin:5px 0;color:#d6d8dc}
+.check{display:grid;grid-template-columns:repeat(2,1fr);gap:10px} .check div{padding:12px;background:var(--surface);border:1px solid var(--line);border-radius:9px}
+footer{padding:36px 0 80px;color:var(--muted);font-size:12px}
+@media(max-width:760px){.card,.card.third{grid-column:1/-1} .check{grid-template-columns:1fr} h1{font-size:42px}}
+@media print{nav,.cmd button{display:none} body{background:white;color:black} .card{background:white;border-color:#ccc} p,li,td,.small{color:#333} h1,h2,h3{color:#111} a{color:#0645ad}}
+
+.table-fit{max-width:100%;overflow-x:auto}
+.tool-table{width:100%;max-width:100%;table-layout:fixed;font-size:11.5px}
+.tool-table th,.tool-table td{overflow-wrap:anywhere;padding:9px 7px}
+.tool-table th:nth-child(1),.tool-table td:nth-child(1){width:14%}
+.tool-table th:nth-child(2),.tool-table td:nth-child(2){width:15%}
+.tool-table th:nth-child(3),.tool-table td:nth-child(3){width:23%}
+.tool-table th:nth-child(4),.tool-table td:nth-child(4){width:23%}
+.tool-table th:nth-child(5),.tool-table td:nth-child(5){width:25%}
+.tool-table .cmd{min-width:0;margin:5px 0}
+.tool-table .cmd code{white-space:pre-wrap;overflow-wrap:anywhere;word-break:break-all;font-size:10.5px;padding:9px 8px}
+.tool-table .cmd button{padding:0 8px;font-size:10px}
+@media(max-width:900px){
+ .tool-table{font-size:10.5px;table-layout:auto}
+ .tool-table th,.tool-table td{padding:7px 5px}
+ .tool-table th:nth-child(n),.tool-table td:nth-child(n){width:auto}
+ .tool-table .cmd{display:block}
+ .tool-table .cmd button{width:100%;border-left:0;border-top:1px solid var(--line);padding:7px}
+}
+
+</style>
+</head>
+<body>
+<header class="hero"><div class="wrap">
+<div class="eyebrow">Maratona Agentes de IA do jeito certo! · Aquecimento 2</div>
+<h1>PC zerado → ambiente pronto para agentes.</h1>
+<p>Guia de instalação e referências. Este guia cobre <strong>Windows, WSL, Linux/VPS e macOS</strong>, com caminhos de instalação e referências oficiais.</p>
+<div class="meta"><span class="pill">Revisado: 25 ago 2026 · v0.4</span><span class="pill">Links oficiais</span><span class="pill">Comandos copiáveis</span><span class="pill">Setup multiplataforma</span></div>
+<div class="notice"><strong>Regra de segurança:</strong> não instale extensão, CLI/TUI ou script porque apareceu primeiro na busca. Confirme domínio oficial, organização/publisher, repositório e permissões. Nunca projete uma API key real em aula ou commit.</div>
+</div></header>
+
+<nav><div class="wrap">
+<a href="#mapa">Mapa</a><a href="#windows">Windows</a><a href="#linux">WSL/VPS</a><a href="#mac">macOS</a><a href="#agentes">Agentes/CLI/TUI</a><a href="#extensoes">Extensões</a><a href="#apis">Planos & APIs</a><a href="#smoke">Smoke test</a>
+</div></nav>
+
+<main>
+<section id="mapa"><div class="wrap">
+<h2>0. O mapa mental</h2>
+<p>Separe quatro coisas: <strong>base da máquina</strong>, <strong>interfaces de desenvolvimento</strong>, <strong>agentes/CLI/TUI</strong> e <strong>acesso econômico</strong> (assinatura, API, router).</p>
+<div class="grid">
+<div class="card third"><div class="tag">Base</div><h3>Git · Node · Python</h3><p>Runtimes e ferramentas que muitos CLI/TUI usam.</p></div>
+<div class="card third"><div class="tag">Ambiente</div><h3>Windows · WSL · VPS</h3><p>PATH, filesystem, shell e permissões não são iguais.</p></div>
+<div class="card third"><div class="tag">Superfície</div><h3>App · IDE · CLI/TUI</h3><p>A mesma capacidade pode aparecer em interfaces diferentes.</p></div>
+</div>
+</div></section>
+
+<section id="windows"><div class="wrap">
+<h2>1. Windows zerado</h2>
+<div class="grid">
+<div class="card">
+<div class="tag official">Microsoft oficial</div><h3>WSL 2 + Ubuntu</h3>
+<p><a class="" href="https://learn.microsoft.com/pt-br/windows/wsl/install" target="_blank" rel="noopener">Guia oficial WSL</a></p>
+<div class="cmd"><code>wsl --install</code><button type="button" onclick="copyCode(this)">copiar</button></div>
+<div class="cmd"><code>wsl --list --verbose</code><button type="button" onclick="copyCode(this)">copiar</button></div>
+<p class="small">O primeiro comando pode exigir reboot. Para aula ao vivo, use snapshot pós-reboot.</p>
+</div>
+<div class="card">
+<div class="tag official">Base recomendada</div><h3>Git, Node LTS, Python, VS Code, Chrome</h3>
+<ul>
+<li><a class="" href="https://git-scm.com/downloads" target="_blank" rel="noopener">Git</a></li>
+<li><a class="" href="https://nodejs.org/en/download" target="_blank" rel="noopener">Node.js — use LTS</a></li>
+<li><a class="" href="https://www.python.org/downloads/" target="_blank" rel="noopener">Python</a></li>
+<li><a class="" href="https://code.visualstudio.com/download" target="_blank" rel="noopener">Visual Studio Code</a></li>
+<li><a class="" href="https://www.google.com/chrome/" target="_blank" rel="noopener">Google Chrome</a></li>
+</ul>
+<div class="cmd"><code>winget install --id Git.Git -e --source winget</code><button type="button" onclick="copyCode(this)">copiar</button></div>
+<div class="cmd"><code>winget install --id Microsoft.VisualStudioCode -e</code><button type="button" onclick="copyCode(this)">copiar</button></div>
+</div>
+</div>
+<div class="notice"><strong>Node:</strong> para a base geral, prefira a versão LTS mostrada na página oficial. Não fixe “Current” só porque é a maior versão. Ferramentas específicas podem exigir outra faixa.</div>
+</div></section>
+
+<section id="linux"><div class="wrap">
+<h2>2. WSL / Ubuntu / VPS</h2>
+<p>O mesmo bootstrap funciona muito bem em WSL e numa VPS Ubuntu/Debian.</p>
+<div class="grid">
+<div class="card full">
+<div class="tag">Bootstrap</div>
+<div class="cmd"><code>sudo apt update &amp;&amp; sudo apt upgrade -y</code><button type="button" onclick="copyCode(this)">copiar</button></div>
+<div class="cmd"><code>sudo apt install -y git curl unzip jq ripgrep build-essential ca-certificates python3 python3-pip python3-venv</code><button type="button" onclick="copyCode(this)">copiar</button></div>
+<p>Node LTS via nvm:</p>
+<div class="cmd"><code>curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.40.6/install.sh | bash</code><button type="button" onclick="copyCode(this)">copiar</button></div>
+<div class="cmd"><code>. &quot;$HOME/.nvm/nvm.sh&quot;</code><button type="button" onclick="copyCode(this)">copiar</button></div>
+<div class="cmd"><code>nvm install 24</code><button type="button" onclick="copyCode(this)">copiar</button></div>
+<div class="cmd"><code>node -v &amp;&amp; npm -v &amp;&amp; python3 --version &amp;&amp; git --version</code><button type="button" onclick="copyCode(this)">copiar</button></div>
+<p class="small">A versão do nvm/Node muda. O link oficial do Node acima deve ser a fonte de verdade perto da aula.</p>
+</div>
+</div>
+</div></section>
+
+<section id="mac"><div class="wrap">
+<h2>3. macOS</h2>
+<div class="grid">
+<div class="card">
+<div class="tag">Base</div>
+<p>Instale Git/Xcode Command Line Tools, Node LTS (nvm), Python e VS Code. Homebrew é opcional.</p>
+<div class="cmd"><code>xcode-select --install</code><button type="button" onclick="copyCode(this)">copiar</button></div>
+<p><a class="" href="https://nodejs.org/en/download" target="_blank" rel="noopener">Node LTS</a> · <a class="" href="https://www.python.org/downloads/" target="_blank" rel="noopener">Python</a> · <a class="" href="https://code.visualstudio.com/download" target="_blank" rel="noopener">VS Code</a></p>
+</div>
+<div class="card">
+<div class="tag">Agentes</div>
+<p>Os instaladores Linux/macOS abaixo cobrem Codex, Claude Code, Antigravity CLI/TUI, Cursor CLI/TUI, Hermes e OpenClaw.</p>
+</div>
+</div></div></section>
+
+<section id="agentes"><div class="wrap">
+<h2>4. Agentes, IDEs e CLI/TUI</h2>
+<p><strong>Não é uma lista de “tem que instalar tudo”.</strong> É um mapa do ecossistema. Escolha 1–2 ferramentas principais e mantenha as outras no radar.</p>
+<div class="table-fit"><table class="tool-table">
+<thead><tr><th>Ferramenta</th><th>Superfícies</th><th>Windows</th><th>WSL/Linux/macOS</th><th>Fonte</th></tr></thead>
+<tbody>
+<tr>
+<td><strong>OpenAI</strong></td>
+<td>ChatGPT Desktop + ChatGPT Classic + Codex CLI/TUI + IDE/Web</td>
+<td>
+<p><strong>ChatGPT (novo app Windows)</strong><br><a href="https://chatgpt.com/download/" target="_blank" rel="noopener">Página oficial de download</a></p>
+<p><strong>ChatGPT Classic (Windows)</strong><br><a href="https://get.microsoft.com/installer/download/9NT1R1C2HH7J?cid=website_cta_psi" target="_blank" rel="noopener">Download direto Microsoft</a></p>
+<div class="cmd"><code>powershell -ExecutionPolicy ByPass -c "irm https://chatgpt.com/codex/install.ps1 | iex"</code><button type="button" onclick="copyCode(this)">copiar</button></div>
+<span class="small">O nome <strong>Codex</strong> permanece no CLI/TUI. O antigo app Codex foi incorporado ao novo ChatGPT Desktop.</span>
+</td>
+<td>
+<div class="cmd"><code>curl -fsSL https://chatgpt.com/codex/install.sh | sh</code><button type="button" onclick="copyCode(this)">copiar</button></div>
+<div class="cmd"><code>npm install -g @openai/codex</code><button type="button" onclick="copyCode(this)">copiar</button></div>
+</td>
+<td><a href="https://chatgpt.com/download/" target="_blank" rel="noopener">ChatGPT Desktop / Classic</a> · <a href="https://github.com/openai/codex" target="_blank" rel="noopener">Codex GitHub</a> · <a href="https://developers.openai.com/codex/ide" target="_blank" rel="noopener">IDE docs</a> · <a href="https://chatgpt.com/codex" target="_blank" rel="noopener">Codex Web</a></td>
+</tr>
+<tr><td><strong>Claude / Claude Code</strong></td><td>Desktop, IDE, CLI/TUI, Chrome</td><td><div class="cmd"><code>irm https://claude.ai/install.ps1 | iex</code><button type="button" onclick="copyCode(this)">copiar</button></div></td><td><div class="cmd"><code>curl -fsSL https://claude.ai/install.sh | bash</code><button type="button" onclick="copyCode(this)">copiar</button></div><div class="cmd"><code>npm install -g @anthropic-ai/claude-code</code><button type="button" onclick="copyCode(this)">copiar</button></div></td><td><a class="" href="https://claude.com/download" target="_blank" rel="noopener">Claude Desktop</a> · <a class="" href="https://code.claude.com/docs/en/quickstart" target="_blank" rel="noopener">Claude Code</a> · <a class="" href="https://code.claude.com/docs/en/vs-code" target="_blank" rel="noopener">VS Code docs</a> · <a class="" href="https://support.claude.com/pt/articles/12012173-comece-a-usar-claude-no-chrome" target="_blank" rel="noopener">Claude in Chrome</a></td></tr>
+<tr><td><strong>Google Antigravity</strong></td><td>Antigravity 2.0 app, IDE, CLI/TUI, SDK</td><td><div class="cmd"><code>irm https://antigravity.google/cli/install.ps1 | iex</code><button type="button" onclick="copyCode(this)">copiar</button></div></td><td><div class="cmd"><code>curl -fsSL https://antigravity.google/cli/install.sh | bash</code><button type="button" onclick="copyCode(this)">copiar</button></div></td><td><a class="" href="https://antigravity.google/download" target="_blank" rel="noopener">Download oficial</a></td></tr>
+<tr>
+<td><strong>Qwen Studio</strong></td><td>Desktop + Web + Mobile</td>
+<td><a href="https://qwen.ai/download" target="_blank" rel="noopener">Download oficial para Windows</a></td>
+<td><a href="https://qwen.ai/download" target="_blank" rel="noopener">Download oficial para macOS</a></td>
+<td><a href="https://qwen.ai/download" target="_blank" rel="noopener">qwen.ai/download</a><br><span class="small"><strong>Qwen Studio continua gratuito para uso</strong> segundo a página oficial. A API Qwen é um serviço separado.</span></td>
+</tr>
+<tr>
+<td><strong>MiniMax Code / Agent</strong></td><td>Desktop + Web Agent + API/Token Plan</td>
+<td><a href="https://agent.minimax.io/download" target="_blank" rel="noopener">Download oficial para Windows</a></td>
+<td><a href="https://agent.minimax.io/download" target="_blank" rel="noopener">Download oficial para macOS</a></td>
+<td><a href="https://agent.minimax.io/download" target="_blank" rel="noopener">MiniMax Code download</a> · <a href="https://agent.minimax.io/" target="_blank" rel="noopener">MiniMax Agent</a><br><span class="small">O Agent oferece créditos gratuitos de experiência e também planos pagos. O Token Plan atual unifica MiniMax Code, API e quotas.</span></td>
+</tr>
+<tr><td><strong>Cursor</strong></td><td>IDE + CLI/TUI</td><td><div class="cmd"><code>irm &#x27;https://cursor.com/install?win32=true&#x27; | iex</code><button type="button" onclick="copyCode(this)">copiar</button></div></td><td><div class="cmd"><code>curl https://cursor.com/install -fsS | bash</code><button type="button" onclick="copyCode(this)">copiar</button></div></td><td><a class="" href="https://cursor.com/download" target="_blank" rel="noopener">Download</a> · <a class="" href="https://prod.cursor.com/docs/cli/installation" target="_blank" rel="noopener">CLI/TUI docs</a></td></tr>
+<tr><td><strong>OpenCode</strong></td><td>Desktop/terminal/agent</td><td><div class="cmd"><code>npm install -g opencode-ai</code><button type="button" onclick="copyCode(this)">copiar</button></div><span class="small">WSL recomendado para melhor experiência.</span></td><td><div class="cmd"><code>curl -fsSL https://opencode.ai/install | bash</code><button type="button" onclick="copyCode(this)">copiar</button></div></td><td><a class="" href="https://opencode.ai/docs/" target="_blank" rel="noopener">Docs</a> · <a class="" href="https://opencode.ai/docs/pt-br/windows-wsl/" target="_blank" rel="noopener">Windows/WSL</a></td></tr>
+<tr><td><strong>Kilo Code</strong></td><td>VS Code, JetBrains, CLI/TUI, Cloud</td><td colspan="2"><div class="cmd"><code>npm install -g @kilocode/cli</code><button type="button" onclick="copyCode(this)">copiar</button></div><div class="cmd"><code>kilo</code><button type="button" onclick="copyCode(this)">copiar</button></div></td><td><a class="" href="https://kilo.ai/docs/getting-started/installing" target="_blank" rel="noopener">Instalação</a> · <a class="" href="https://kilo.ai/docs/code-with-ai/platforms/cli" target="_blank" rel="noopener">CLI/TUI</a> · <a class="" href="https://github.com/Kilo-Org/kilocode" target="_blank" rel="noopener">GitHub</a></td></tr>
+<tr>
+<td><strong>Hermes Agent</strong></td><td>Desktop + CLI/TUI</td>
+<td><a href="https://hermes-agent.nousresearch.com/" target="_blank" rel="noopener">Download oficial para Windows</a><div class="cmd"><code>iex (irm https://hermes-agent.nousresearch.com/install.ps1)</code><button type="button" onclick="copyCode(this)">copiar</button></div></td>
+<td><div class="cmd"><code>curl -fsSL https://hermes-agent.nousresearch.com/install.sh | bash</code><button type="button" onclick="copyCode(this)">copiar</button></div></td>
+<td><a href="https://hermes-agent.nousresearch.com/" target="_blank" rel="noopener">Página oficial</a> · <a href="https://github.com/NousResearch/hermes-agent" target="_blank" rel="noopener">GitHub oficial</a></td>
+</tr>
+<tr>
+<td><strong>OpenClaw</strong></td><td>Windows Hub + CLI/TUI + Gateway/WSL</td>
+<td><a href="https://openclaw.ai/" target="_blank" rel="noopener">Página inicial</a><div class="cmd"><code>iwr -useb https://openclaw.ai/install.ps1 | iex</code><button type="button" onclick="copyCode(this)">copiar</button></div></td>
+<td><div class="cmd"><code>curl -fsSL https://openclaw.ai/install.sh | bash</code><button type="button" onclick="copyCode(this)">copiar</button></div></td>
+<td><a href="https://openclaw.ai/" target="_blank" rel="noopener">OpenClaw</a> · <a href="https://docs.openclaw.ai/pt-BR/install" target="_blank" rel="noopener">Instalação</a> · <a href="https://github.com/openclaw/openclaw" target="_blank" rel="noopener">GitHub oficial</a></td>
+</tr>
+<tr><td><strong>Ollama</strong></td><td>Runtime local + CLI/TUI + API local</td><td><div class="cmd"><code>irm https://ollama.com/install.ps1 | iex</code><button type="button" onclick="copyCode(this)">copiar</button></div><span class="small">Também há instalador gráfico nativo para Windows.</span></td><td><div class="cmd"><code>curl -fsSL https://ollama.com/install.sh | sh</code><button type="button" onclick="copyCode(this)">copiar</button></div><span class="small">Mesmo instalador para macOS e Linux; em Linux pode rodar como serviço.</span></td><td><a href="https://ollama.com/download" target="_blank" rel="noopener">Download oficial</a> · <a href="https://docs.ollama.com/quickstart" target="_blank" rel="noopener">Quickstart</a> · <a href="https://github.com/ollama/ollama" target="_blank" rel="noopener">GitHub</a><br><span class="small">API local padrão: <code>http://localhost:11434</code></span></td></tr>
+<tr><td><strong>DeepSeek Harness</strong></td><td>Web UI + agent harness extensível</td><td colspan="2"><div class="cmd"><code>npx @deepseek-ai/dsh web</code><button type="button" onclick="copyCode(this)">copiar</button></div><span class="small">Requer Node.js. O projeto está em developer preview e pode ter mudanças de compatibilidade.</span></td><td><a href="https://www.deepseek.com/harness/en/" target="_blank" rel="noopener">Página oficial</a> · <a href="https://github.com/deepseek-ai/deepseek-harness" target="_blank" rel="noopener">GitHub oficial</a></td></tr>
+</tbody>
+</table></div>
+</div></section>
+
+<section id="extensoes"><div class="wrap">
+<h2>5. Extensões: nome, publisher, origem e permissões</h2>
+<div class="notice"><strong>Regra:</strong> prefira o botão/link de instalação vindo da documentação oficial do fornecedor. Marketplace é uma loja aberta; nomes parecidos não provam autoria.</div>
+<table>
+<thead><tr><th>Extensão</th><th>Publisher / referência</th><th>Link seguro</th><th>Observação</th></tr></thead>
+<tbody>
+<tr><td>WSL</td><td>Microsoft · <code>ms-vscode-remote.remote-wsl</code></td><td><a class="" href="https://marketplace.visualstudio.com/items?itemName=ms-vscode-remote.remote-wsl" target="_blank" rel="noopener">Marketplace</a></td><td>Abre projetos e terminais dentro do WSL.</td></tr>
+<tr><td>Python</td><td>Microsoft · <code>ms-python.python</code></td><td><a class="" href="https://marketplace.visualstudio.com/items?itemName=ms-python.python" target="_blank" rel="noopener">Marketplace</a></td><td>Instala Pylance/debugger/environments conforme documentação.</td></tr>
+<tr><td>Claude Code</td><td>Anthropic · <code>anthropic.claude-code</code></td><td><a class="" href="https://code.claude.com/docs/en/vs-code" target="_blank" rel="noopener">Docs oficiais</a></td><td>Use docs oficiais como ponto de entrada.</td></tr>
+<tr><td>Codex</td><td>OpenAI</td><td><a class="" href="https://developers.openai.com/codex/ide" target="_blank" rel="noopener">Docs oficiais da extensão</a></td><td>Compatível com VS Code e forks suportados; entre pela página oficial.</td></tr>
+<tr><td>Kilo Code</td><td>Kilo Code · <code>kilocode.Kilo-Code</code></td><td><a class="" href="https://marketplace.visualstudio.com/items?itemName=kilocode.Kilo-Code" target="_blank" rel="noopener">Marketplace</a></td><td>Compartilha runtime/ecossistema com o CLI/TUI.</td></tr>
+<tr><td>Gemini Code Assist</td><td>Google</td><td><a class="" href="https://github.com/google-gemini/gemini-cli" target="_blank" rel="noopener">Gemini CLI / Google docs</a></td><td>Confirmar publisher Google no marketplace antes da instalação.</td></tr>
+<tr><td>Claude in Chrome</td><td>Anthropic</td><td><a class="" href="https://support.claude.com/pt/articles/12012173-comece-a-usar-claude-no-chrome" target="_blank" rel="noopener">Help oficial</a></td><td>Pode ler/clicar/digitar/navegar; ensine prompt injection e permissões.</td></tr>
+<tr><td>ChatGPT Search</td><td>OpenAI</td><td><a class="" href="https://help.openai.com/pt-br/articles/9237897-pesquisa-do-chatgpt" target="_blank" rel="noopener">Help oficial</a></td><td>Opcional; altera comportamento de busca do navegador.</td></tr>
+</tbody>
+</table>
+</div></section>
+
+<section id="apis"><div class="wrap">
+<h2>6. Planos por assinatura, APIs e roteadores</h2>
+
+<div class="notice"><strong>Snapshot de 25/08/2026:</strong> nomes, limites, promoções e preços mudam por região e ciclo de cobrança. Use esta tabela como mapa do ecossistema e confirme o valor no link oficial antes de contratar.</div>
+
+<h3>Planos por assinatura</h3>
+<table>
+<thead><tr><th>Provedor / ecossistema</th><th>Modalidades de assinatura</th><th>Tipo de acesso / harness embutido</th><th>Preço indicativo</th><th>Fonte oficial</th></tr></thead>
+<tbody>
+<tr>
+<td><strong>OpenAI</strong></td>
+<td>Free, Go, Plus, Pro, Business, Enterprise / Edu</td>
+<td>ChatGPT web/desktop/mobile, Work, Codex, ferramentas, conectores, plugins e workspaces; Business/Enterprise adicionam administração, orçamento e controles.</td>
+<td>Plus ~US$20/mês; Pro ~US$200/mês; Business ~US$20/usuário/mês anual (US$25 mensal); Enterprise sob consulta.</td>
+<td><a href="https://chatgpt.com/pricing" target="_blank" rel="noopener">Planos pessoais</a> · <a href="https://openai.com/business/pricing/" target="_blank" rel="noopener">Business/Enterprise</a></td>
+</tr>
+
+<tr>
+<td><strong>Anthropic</strong></td>
+<td>Free, Pro, Max 5x, Max 20x, Team, Enterprise</td>
+<td>Claude web/desktop/mobile, Projects, Artifacts, Cowork e Claude Code; Team/Enterprise adicionam administração, conectores e governança.</td>
+<td>Pro US$20/mês (ou US$17/mês anual); Max desde US$100/mês; Team standard US$20/seat/mês anual; Enterprise combina seat + uso.</td>
+<td><a href="https://claude.com/pricing" target="_blank" rel="noopener">Pricing oficial</a></td>
+</tr>
+
+<tr>
+<td><strong>Google</strong></td>
+<td>Google AI Pro, Google AI Ultra; ofertas Google Workspace/Cloud separadas</td>
+<td>Gemini, integração com Gmail/Docs/Drive, NotebookLM, Flow e créditos/limites ampliados; planos atuais também ampliam uso do Antigravity.</td>
+<td>AI Pro historicamente ~US$19,99/mês; AI Ultra possui tiers superiores e preço regional. Confirmar no Google One.</td>
+<td><a href="https://one.google.com/about/google-ai-plans/" target="_blank" rel="noopener">Google AI Plans</a></td>
+</tr>
+
+<tr>
+<td><strong>Z.AI / Zhipu AI (GLM)</strong></td>
+<td>GLM Coding Plan: Lite, Pro, Max; opções Individual e Team</td>
+<td>Chave/credencial voltada a coding agents e IDEs; suporta 20+ ferramentas, incluindo Claude Code e outros harnesses; planos superiores incluem MCPs curados.</td>
+<td>Lite US$12,60/mês; Pro US$56/mês; Max desde ~US$117,60/mês nas ofertas exibidas em 25/08/2026.</td>
+<td><a href="https://z.ai/subscribe" target="_blank" rel="noopener">GLM Coding Plan</a></td>
+</tr>
+
+<tr>
+<td><strong>OpenCode</strong></td>
+<td>OpenCode Go; Zen como saldo/pay-as-you-go complementar</td>
+<td>Provider unificado utilizável no OpenCode ou em outros agentes por API key; seleção de modelos abertos testados para agentic coding.</td>
+<td>Go: US$5 no primeiro mês e depois US$10/mês; limites por janela de 5 horas, semana e mês.</td>
+<td><a href="https://opencode.ai/go" target="_blank" rel="noopener">OpenCode Go</a> · <a href="https://opencode.ai/zen" target="_blank" rel="noopener">OpenCode Zen</a></td>
+</tr>
+
+<tr>
+<td><strong>Moonshot AI / Kimi</strong></td>
+<td>Membership: Moderato, Allegretto, Allegro, Vivace; Kimi Code incluído nos tiers atuais</td>
+<td>Web/app com Agent, Deep Research, plugins, scheduled tasks, Kimi Code CLI/TUI e, em tiers superiores, Agent Swarm / Kimi Claw.</td>
+<td>Internacional: US$19, US$39, US$99 e US$199/mês, respectivamente, no snapshot atual.</td>
+<td><a href="https://www.kimi.ai/membership/pricing" target="_blank" rel="noopener">Kimi Membership</a> · <a href="https://github.com/MoonshotAI/kimi-code" target="_blank" rel="noopener">Kimi Code GitHub</a></td>
+</tr>
+
+<tr>
+<td><strong>MiniMax</strong></td>
+<td>Token Plan / Coding Plan + API pay-as-you-go</td>
+<td>MiniMax Code oficial e chave compatível com ferramentas como OpenClaw, Claude Code, Cline e outros clientes compatíveis.</td>
+<td>Planos de volume e assinatura variam por tier e cobrança; há opções anuais e PAYG. Conferir a página oficial no momento da contratação.</td>
+<td><a href="https://platform.minimax.io/subscribe/coding-plan" target="_blank" rel="noopener">MiniMax Token/Coding Plan</a></td>
+</tr>
+
+<tr>
+<td><strong>GitHub Copilot</strong></td>
+<td>Free, Student, Pro, Pro+, Max, Business, Enterprise</td>
+<td>Copilot App, IDEs, GitHub.com, CLI/TUI, cloud agent, code review e acesso a agentes de terceiros em planos compatíveis.</td>
+<td>Pro US$10/mês; Pro+ US$39; Max US$100; Business US$19/seat; Enterprise US$39/seat.</td>
+<td><a href="https://github.com/features/copilot/plans" target="_blank" rel="noopener">Planos Copilot</a></td>
+</tr>
+
+<tr>
+<td><strong>Cursor / Windsurf</strong></td>
+<td>Cursor: Hobby, Pro, Pro+, Ultra, Teams/Enterprise. Windsurf: Free, Pro, Teams, Enterprise.</td>
+<td>IDEs agentic completas com modelos, MCP, skills/hooks, autocomplete, agentes locais/cloud e administração para equipes.</td>
+<td>Cursor Pro desde US$20/mês. Windsurf Pro ~US$15/mês, Teams ~US$30/usuário/mês, Enterprise ~US$60/usuário/mês no snapshot atual.</td>
+<td><a href="https://cursor.com/pricing" target="_blank" rel="noopener">Cursor Pricing</a> · <a href="https://windsurf.com/pricing" target="_blank" rel="noopener">Windsurf Pricing</a></td>
+</tr>
+
+<tr>
+<td><strong>Ollama</strong></td>
+<td>Runtime local gratuito/open-source; serviços cloud são opcionais</td>
+<td>Executa modelos localmente e expõe API local; pode lançar/integrar ferramentas como Claude Code, Codex, OpenCode e OpenClaw usando modelos locais compatíveis.</td>
+<td>Local: grátis, com custo próprio de hardware/energia/armazenamento. Cloud, quando utilizado, segue modelo próprio de cobrança.</td>
+<td><a href="https://ollama.com/download" target="_blank" rel="noopener">Download</a> · <a href="https://docs.ollama.com/quickstart" target="_blank" rel="noopener">Docs</a></td>
+</tr>
+</tbody>
+</table>
+
+<h3 style="margin-top:34px">API direta e roteadores</h3>
+<div class="grid">
+<div class="card">
+<div class="tag">OpenAI</div><h3>API OpenAI</h3>
+<p>Billing de API é separado da assinatura do ChatGPT. Crie projeto/chave e acompanhe o consumo no Platform.</p>
+<p><a href="https://platform.openai.com/api-keys" target="_blank" rel="noopener">Criar API key</a> · <a href="https://platform.openai.com/docs/quickstart" target="_blank" rel="noopener">Quickstart</a></p>
+</div>
+
+<div class="card">
+<div class="tag">Anthropic</div><h3>Claude API</h3>
+<p>Claude Pro/Max/Team não equivalem a uma franquia fixa da API. O Console/API usa cobrança própria por modelo e recurso.</p>
+<p><a href="https://platform.claude.com/settings/keys" target="_blank" rel="noopener">API keys</a> · <a href="https://claude.com/pricing" target="_blank" rel="noopener">Pricing API</a></p>
+</div>
+
+<div class="card">
+<div class="tag">Google</div><h3>Gemini Developer API</h3>
+<p>Chave via Google AI Studio; existem tiers gratuitos para determinados modelos/limites e tiers pagos.</p>
+<p><a href="https://aistudio.google.com/apikey" target="_blank" rel="noopener">Criar Gemini API key</a> · <a href="https://ai.google.dev/gemini-api/docs/api-key?hl=pt-BR" target="_blank" rel="noopener">Docs</a></p>
+</div>
+
+<div class="card">
+<div class="tag">Routers / gateways</div><h3>OpenRouter e OpenCode</h3>
+<p>Úteis para acessar vários modelos/provedores com uma camada comum. Não confunda “free” com ilimitado, privado ou adequado a produção.</p>
+<p><a href="https://openrouter.ai/settings/keys" target="_blank" rel="noopener">OpenRouter keys</a> · <a href="https://openrouter.ai/openrouter/free" target="_blank" rel="noopener">Free router</a> · <a href="https://openrouter.ai/collections/free-models" target="_blank" rel="noopener">Free models</a><br><a href="https://opencode.ai/zen" target="_blank" rel="noopener">OpenCode Zen</a> · <a href="https://opencode.ai/go" target="_blank" rel="noopener">OpenCode Go</a></p>
+</div>
+</div>
+
+<h3>Variáveis de ambiente — demonstração segura</h3>
+<div class="cmd"><code>$env:OPENAI_API_KEY="sk-EXEMPLO"</code><button type="button" onclick="copyCode(this)">copiar</button></div>
+<div class="cmd"><code>export OPENAI_API_KEY="sk-EXEMPLO"</code><button type="button" onclick="copyCode(this)">copiar</button></div>
+<div class="notice"><strong>Nunca:</strong> colocar a chave num slide, chat, screenshot, README ou Git. Use placeholder na aula. Para projetos, <code>.env</code> deve estar no <code>.gitignore</code>; em empresa, use secret manager.</div>
+</div></section>
+
+<section id="smoke"><div class="wrap">
+<h2>7. Smoke test</h2>
+<div class="check">
+<div>□ <code>wsl --list --verbose</code> funciona</div>
+<div>□ <code>git --version</code> funciona</div>
+<div>□ <code>node -v && npm -v</code> funciona</div>
+<div>□ <code>python3 --version</code> / Python funciona</div>
+<div>□ VS Code abre projeto no ambiente escolhido</div>
+<div>□ pelo menos 1 agente/CLI/TUI abre e autentica</div>
+<div>□ diferença entre app, IDE, CLI/TUI e API está clara</div>
+<div>□ API key pode ser criada e armazenada sem expor segredo</div>
+</div>
+</div></section>
+
+</main>
+
+<footer><div class="wrap">
+<p>Maratona Agentes de IA do jeito certo! · Guia de setup · v0.4 · Revisão 25/08/2026.</p>
+<p>Preços, limites, versões e produtos de IA podem mudar. Para instalações e contratação, consulte sempre os links oficiais indicados neste guia.</p>
+</div></footer>
+
+<script>
+function copyCode(btn){
+  const code=btn.previousElementSibling.innerText;
+  navigator.clipboard.writeText(code).then(()=>{
+    const old=btn.innerText;
+    btn.innerText='copiado';
+    setTimeout(()=>btn.innerText=old,1200);
+  });
+}
+</script>
+</body>
+</html>
