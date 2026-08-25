@@ -94,15 +94,31 @@ export const Schedule = () => {
             <div className="grid md:grid-cols-2 gap-6 text-left max-w-3xl mx-auto">
               <div className="rounded-lg border border-border/60 bg-card/60 p-6">
                 <p className="text-xs font-semibold uppercase tracking-wide text-primary mb-2">Aquecimento A • Contexto</p>
-                <h4 className="text-lg font-semibold text-foreground mb-2">Como chegamos aos agentes</h4>
-                <p className="text-xs font-medium text-secondary mb-2">📅 quarta, 19 de agosto</p>
-                <p className="text-sm text-muted-foreground">Dos copilotos aos modelos com reasoning, ferramentas, MCPs, skills e agentes. Separando evolução incremental do que realmente muda a forma de trabalhar.</p>
+                 <h4 className="text-lg font-semibold text-foreground mb-2">Como chegamos aos agentes</h4>
+                 <p className="text-xs font-medium text-secondary mb-2">📅 quarta, 19 de agosto</p>
+                 <a
+                   href="https://youtube.com/live/mHbwi1fQg4I?feature=share&t=148"
+                   target="_blank"
+                   rel="noreferrer"
+                   className="inline-block text-sm font-medium text-primary underline underline-offset-4 hover:text-primary/80 mb-2"
+                 >
+                   Assistir à gravação
+                 </a>
+                 <p className="text-sm text-muted-foreground">Dos copilotos aos modelos com reasoning, ferramentas, MCPs, skills e agentes. Separando evolução incremental do que realmente muda a forma de trabalhar.</p>
               </div>
               <div className="rounded-lg border border-border/60 bg-card/60 p-6">
                 <p className="text-xs font-semibold uppercase tracking-wide text-primary mb-2">Aquecimento B • Preparação</p>
-                <h4 className="text-lg font-semibold text-foreground mb-2">Seu ambiente para trabalhar com agentes</h4>
-                <p className="text-xs font-medium text-secondary mb-2">📅 terça, 25 de agosto</p>
-                <p className="text-sm text-muted-foreground">Vamos instalar e configurar opções como Codex, Claude Code, Cursor, Antigravity, OpenCode e Hermes. Cada pessoa escolhe a ferramenta com que se sente mais à vontade.</p>
+                 <h4 className="text-lg font-semibold text-foreground mb-2">Seu ambiente para trabalhar com agentes</h4>
+                 <p className="text-xs font-medium text-secondary mb-2">📅 terça, 25 de agosto</p>
+                 <a
+                   href="https://youtube.com/live/5ErKODDSp78?feature=share&t=860"
+                   target="_blank"
+                   rel="noreferrer"
+                   className="inline-block text-sm font-medium text-primary underline underline-offset-4 hover:text-primary/80 mb-2"
+                 >
+                   Assistir à gravação
+                 </a>
+                 <p className="text-sm text-muted-foreground">Vamos instalar e configurar opções como Codex, Claude Code, Cursor, Antigravity, OpenCode e Hermes. Cada pessoa escolhe a ferramenta com que se sente mais à vontade.</p>
               </div>
             </div>
           </div>
