@@ -1,5 +1,5 @@
 import { Card } from "@/components/ui/card";
-import { Radio, Trophy } from "lucide-react";
+import { Radio, Trophy, Calendar } from "lucide-react";
 
 const weeks = [
   {
@@ -10,6 +10,8 @@ const weeks = [
         title: "Aula 1 • Skills, MCPs e Plugins",
         subtitle: "Capacidades agênticas",
         date: "terça, 01 de setembro",
+        time: "19h às 21h30",
+        icsFile: "/calendar/aula1.ics",
         topics: [
           "Teoria: skills, agentes, subagentes, MCPs e plugins: onde cada peça começa, termina e se conecta",
           "Prática: inspecionar capacidades existentes e criar ou adaptar uma para um problema real",
@@ -20,6 +22,8 @@ const weeks = [
         title: "Aula 2 • Harness Engineering",
         subtitle: "O sistema ao redor do modelo",
         date: "quinta, 03 de setembro",
+        time: "19h às 21h30",
+        icsFile: "/calendar/aula2.ics",
         topics: [
           "Teoria: contexto, memória, ferramentas, permissões, estado, gates e evidências",
           "Prática: comparar configurações e construir um harness mínimo para um agente simples",
@@ -40,6 +44,8 @@ const weeks = [
         title: "Aula 3 • Loop Engineering",
         subtitle: "Como fazer a IA continuar trabalhando",
         date: "terça, 08 de setembro",
+        time: "19h às 21h30",
+        icsFile: "/calendar/aula3.ics",
         topics: [
           "Teoria: estado, planejamento, execução, observação, avaliação, retries, checkpoints e escalada humana",
           "Prática: construir um loop que executa, verifica, corrige e sabe quando parar",
@@ -50,6 +56,8 @@ const weeks = [
         title: "Aula 4 • Gestão de Tokens, Custos e Governança",
         subtitle: "Custo por resultado",
         date: "quinta, 10 de setembro",
+        time: "19h às 21h30",
+        icsFile: "/calendar/aula4.ics",
         topics: [
           "Tokens de entrada e saída, contexto, cache, reasoning, preços, APIs, gateways e formas de mensuração",
           "Como escolher planos, encontrar IAs gratuitas e selecionar o modelo ideal para cada tarefa",
@@ -72,9 +80,17 @@ export const Schedule = () => {
           <h2 className="text-4xl md:text-5xl font-bold mb-4">
             <span className="glow-cyan text-primary">O percurso da maratona</span>
           </h2>
-          <p className="text-xl text-muted-foreground">
+          <p className="text-xl text-muted-foreground mb-4">
             Duas semanas, quatro alavancas, duas aulas por semana. Cada aula tem 2h30, totalizando 10h de maratona. Cada encontro combina repertório, execução ao vivo e uma missão para aplicar durante a semana.
           </p>
+          <a
+            href="/calendar/maratona-completa.ics"
+            download
+            className="inline-flex items-center gap-2 px-6 py-3 bg-primary/10 hover:bg-primary/20 border border-primary/30 rounded-lg text-primary font-medium transition-colors"
+          >
+            <Calendar className="w-5 h-5" />
+            Adicionar todas as aulas ao calendário
+          </a>
         </div>
 
         {/* Marathon Period */}
@@ -145,7 +161,21 @@ export const Schedule = () => {
                     <p className="text-sm font-semibold text-foreground">{lesson.title}</p>
                     <p className="text-xs text-primary mb-2">{lesson.subtitle}</p>
                     {lesson.date && (
-                      <p className="text-xs font-medium text-secondary mb-2">📅 {lesson.date} • 2h30</p>
+                      <div className="mb-2">
+                        <p className="text-xs font-medium text-secondary mb-1">
+                          📅 {lesson.date} • {lesson.time || "2h30"}
+                        </p>
+                        {lesson.icsFile && (
+                          <a
+                            href={lesson.icsFile}
+                            download
+                            className="inline-flex items-center gap-1 text-xs text-primary hover:text-primary/80 transition-colors"
+                          >
+                            <Calendar className="w-3 h-3" />
+                            Adicionar ao calendário
+                          </a>
+                        )}
+                      </div>
                     )}
                     <ul className="space-y-2">
                       {lesson.topics.map((topic, idx) => (

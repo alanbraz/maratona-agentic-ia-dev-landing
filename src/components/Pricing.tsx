@@ -15,6 +15,7 @@ const plans = [
     },
     features: [
       "4 aulas ao vivo, 2 por semana, com os instrutores",
+      "Acesso à gravação das aulas",
       "2 aquecimentos preparatórios e 4 aulas ao vivo",
       "Skills, MCPs e plugins",
       "Harness Engineering e Loop Engineering",

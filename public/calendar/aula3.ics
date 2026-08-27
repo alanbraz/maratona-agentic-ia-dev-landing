@@ -1,0 +1,22 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//Maratona Agentes de IA//PT
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:aula3-maratona-agentes-ia-2026@maratona-agentes-ia.com
+DTSTAMP:20260827T120000Z
+DTSTART:20260908T220000Z
+DTEND:20260909T003000Z
+SUMMARY:Maratona Agentes de IA - Aula 3 • Loop Engineering
+DESCRIPTION:Como fazer a IA continuar trabalhando\n\nTópicos:\n• Teoria: estado, planejamento, execução, observação, avaliação, retries, checkpoints e escalada humana\n• Prática: construir um loop que executa, verifica, corrige e sabe quando parar\n• Autonomia com critérios de sucesso, falha e parada verificáveis\n\nDuração: 2h30
+LOCATION:Online
+STATUS:CONFIRMED
+SEQUENCE:0
+BEGIN:VALARM
+TRIGGER:-PT15M
+ACTION:DISPLAY
+DESCRIPTION:A aula começa em 15 minutos
+END:VALARM
+END:VEVENT
+END:VCALENDAR

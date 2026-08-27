@@ -1,0 +1,22 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//Maratona Agentes de IA//PT
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:aula1-maratona-agentes-ia-2026@maratona-agentes-ia.com
+DTSTAMP:20260827T120000Z
+DTSTART:20260901T220000Z
+DTEND:20260902T003000Z
+SUMMARY:Maratona Agentes de IA - Aula 1 • Skills, MCPs e Plugins
+DESCRIPTION:Capacidades agênticas\n\nTópicos:\n• Teoria: skills, agentes, subagentes, MCPs e plugins: onde cada peça começa, termina e se conecta\n• Prática: inspecionar capacidades existentes e criar ou adaptar uma para um problema real\n• Critérios de segurança, dependência, contexto e manutenção\n\nDuração: 2h30
+LOCATION:Online
+STATUS:CONFIRMED
+SEQUENCE:0
+BEGIN:VALARM
+TRIGGER:-PT15M
+ACTION:DISPLAY
+DESCRIPTION:A aula começa em 15 minutos
+END:VALARM
+END:VEVENT
+END:VCALENDAR
